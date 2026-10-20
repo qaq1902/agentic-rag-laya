@@ -23,6 +23,13 @@ def _path(env_var: str, default: str) -> str:
 
 @dataclass(frozen=True)
 class Settings:
+    # Router backend is selected once per process, independently of other LLMs.
+    router_backend: str = field(default_factory=lambda: os.getenv("ROUTER_BACKEND", "llm"))
+    laya_model: str = field(
+        default_factory=lambda: os.getenv("LAYA_MODEL", "convaiinnovations/laya")
+    )
+    laya_device: str = field(default_factory=lambda: os.getenv("LAYA_DEVICE", "cpu"))
+
     # Models
     llm_model: str = os.getenv("LLM_MODEL", "qwen2.5:3b")
     eval_model: str = os.getenv("EVAL_MODEL", os.getenv("LLM_MODEL", "qwen2.5:3b"))

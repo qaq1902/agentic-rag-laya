@@ -30,6 +30,7 @@ dependencies = [
 ui = ["streamlit>=1.38"]
 eval = ["ragas>=0.4", "datasets>=2.0"]
 dev = ["pytest>=8.0"]
+laya = ["laya==0.3.13"]
 
 [project.scripts]
 agentic-rag = "agentic_rag.cli:main"
