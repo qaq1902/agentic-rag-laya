@@ -25,6 +25,13 @@ def _path(env_var: str, default: str) -> str:
 class Settings:
     # Router backend is selected once per process, independently of other LLMs.
     router_backend: str = field(default_factory=lambda: os.getenv("ROUTER_BACKEND", "llm"))
+    document_grader_backend: str = field(
+        default_factory=lambda: os.getenv("DOCUMENT_GRADER_BACKEND", "llm")
+    )
+    # Laya's Noul probability is currently uncalibrated for this document-grading task.
+    document_grader_threshold: float | str = field(
+        default_factory=lambda: _float_env("DOCUMENT_GRADER_THRESHOLD", "0.5")
+    )
     laya_model: str = field(
         default_factory=lambda: os.getenv("LAYA_MODEL", "convaiinnovations/laya")
     )
@@ -69,6 +76,17 @@ class Settings:
         "country) and product_reviews (product, rating, country, review_date, "
         "comment).",
     )
+
+
+def _float_env(env_var: str, default: str) -> float | str:
+    """Parse a numeric environment setting; the selected backend validates its range."""
+    raw = os.getenv(env_var, default)
+    try:
+        return float(raw)
+    except (TypeError, ValueError):
+        # Keep the original value so selecting Laya reports the setting name and
+        # rejects it explicitly; the unused LLM path remains unchanged.
+        return raw
 
 
 settings = Settings()

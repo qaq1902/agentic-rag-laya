@@ -196,6 +196,10 @@ def test_encoding_guard_checks_complete_token_tail(truncated, markers, monkeypat
         effective = state_ids[:-1] if truncated else state_ids
         return head + [2] + effective + [2], markers
 
+    common.render_options = lambda question: [
+        f"{key}: {criterion}" for key, criterion in question["crit"].items()
+    ]
+
     common.build_sequence = Mock(side_effect=encode)
     monkeypatch.setitem(sys.modules, "laya.common", common)
     agent = SimpleNamespace(tok=Tokenizer(), cfg={})
