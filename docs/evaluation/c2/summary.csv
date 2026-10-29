@@ -1,0 +1,7 @@
+run,functional_status,raw_harness_status,end_to_end_ms,llm_calls,laya_predictions,laya_actual_forwards,logical_query_embedding_calls_inferred,embedding_actual_forward_count,initial_route,final_datasource,final_retries
+S1_llm,PASS,FAIL,5649.922167009208,7,0,0,1,UNVERIFIED,vectorstore,vectorstore,0
+S1_laya,PASS,FAIL,4858.529917022679,3,4,4,1,UNVERIFIED,vectorstore,vectorstore,0
+S2_laya,PASS,FAIL,2714.7322079981677,3,4,4,1,UNVERIFIED,vectorstore,vectorstore,0
+S2_llm,PASS,FAIL,3678.421000018716,7,0,0,1,UNVERIFIED,vectorstore,vectorstore,0
+S3_llm,PASS,FAIL,26316.098541021347,14,0,0,3,UNVERIFIED,vectorstore,web_search,2
+S3_laya,PASS,FAIL,10847.98762499122,5,9,9,3,UNVERIFIED,vectorstore,web_search,2

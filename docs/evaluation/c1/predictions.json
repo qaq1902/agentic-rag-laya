@@ -1,0 +1,1277 @@
+{
+  "llm": [
+    {
+      "id": "R01",
+      "group": "clear_relevant",
+      "phase": "warmup_excluded",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 1904.3295829906128,
+      "decision": "yes",
+      "parse_fallback_used": false,
+      "raw_llm_text": "VERDICT: yes"
+    },
+    {
+      "id": "R01",
+      "group": "clear_relevant",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 114.31124998489395,
+      "decision": "yes",
+      "parse_fallback_used": false,
+      "raw_llm_text": "VERDICT: yes"
+    },
+    {
+      "id": "R02",
+      "group": "clear_relevant",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 272.88283297093585,
+      "decision": "yes",
+      "parse_fallback_used": false,
+      "raw_llm_text": "VERDICT: yes"
+    },
+    {
+      "id": "R03",
+      "group": "clear_relevant",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 725.5930840037763,
+      "decision": "yes",
+      "parse_fallback_used": false,
+      "raw_llm_text": "The document discusses the scenario where knowledge changes frequently and mentions that RAG is preferred over fine-tuning in such cases. VERDICT: yes"
+    },
+    {
+      "id": "R04",
+      "group": "clear_relevant",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 663.3508749655448,
+      "decision": "yes",
+      "parse_fallback_used": false,
+      "raw_llm_text": "The document discusses known failure modes of a RAG system, including retrieval misses, context dilution, and hallucination.\nVERDICT: yes"
+    },
+    {
+      "id": "R05",
+      "group": "clear_relevant",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 255.64695795765147,
+      "decision": "no",
+      "parse_fallback_used": false,
+      "raw_llm_text": "VERDICT: no"
+    },
+    {
+      "id": "R06",
+      "group": "clear_relevant",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 255.75050001498312,
+      "decision": "no",
+      "parse_fallback_used": false,
+      "raw_llm_text": "VERDICT: no"
+    },
+    {
+      "id": "R07",
+      "group": "clear_relevant",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 470.4126669676043,
+      "decision": "yes",
+      "parse_fallback_used": false,
+      "raw_llm_text": "The document discusses query rewriting and its purpose when retrieval fails. VERDICT: yes"
+    },
+    {
+      "id": "R08",
+      "group": "clear_relevant",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 258.2974169636145,
+      "decision": "yes",
+      "parse_fallback_used": false,
+      "raw_llm_text": "VERDICT: yes"
+    },
+    {
+      "id": "R09",
+      "group": "clear_relevant",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 495.5924169626087,
+      "decision": "yes",
+      "parse_fallback_used": false,
+      "raw_llm_text": "The document mentions that every grading step is an extra LLM call, which adds latency. VERDICT: yes"
+    },
+    {
+      "id": "R10",
+      "group": "clear_relevant",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 652.2589580272324,
+      "decision": "yes",
+      "parse_fallback_used": false,
+      "raw_llm_text": "The document discusses the concept of faithfulness, which measures whether the generated answer is supported by the retrieved context. VERDICT: yes"
+    },
+    {
+      "id": "I01",
+      "group": "clear_irrelevant",
+      "phase": "measured_warm",
+      "expected": "no",
+      "status": "PASS",
+      "elapsed_ms": 246.25475000357255,
+      "decision": "no",
+      "parse_fallback_used": false,
+      "raw_llm_text": "VERDICT: no"
+    },
+    {
+      "id": "I02",
+      "group": "clear_irrelevant",
+      "phase": "measured_warm",
+      "expected": "no",
+      "status": "PASS",
+      "elapsed_ms": 198.63787497160956,
+      "decision": "no",
+      "parse_fallback_used": false,
+      "raw_llm_text": "VERDICT: no"
+    },
+    {
+      "id": "I03",
+      "group": "clear_irrelevant",
+      "phase": "measured_warm",
+      "expected": "no",
+      "status": "PASS",
+      "elapsed_ms": 192.54729198291898,
+      "decision": "no",
+      "parse_fallback_used": false,
+      "raw_llm_text": "VERDICT: no"
+    },
+    {
+      "id": "I04",
+      "group": "clear_irrelevant",
+      "phase": "measured_warm",
+      "expected": "no",
+      "status": "PASS",
+      "elapsed_ms": 198.12441599788144,
+      "decision": "no",
+      "parse_fallback_used": false,
+      "raw_llm_text": "VERDICT: no"
+    },
+    {
+      "id": "I05",
+      "group": "clear_irrelevant",
+      "phase": "measured_warm",
+      "expected": "no",
+      "status": "PASS",
+      "elapsed_ms": 189.93883300572634,
+      "decision": "no",
+      "parse_fallback_used": false,
+      "raw_llm_text": "VERDICT: no"
+    },
+    {
+      "id": "I06",
+      "group": "clear_irrelevant",
+      "phase": "measured_warm",
+      "expected": "no",
+      "status": "PASS",
+      "elapsed_ms": 274.4802090455778,
+      "decision": "no",
+      "parse_fallback_used": false,
+      "raw_llm_text": "VERDICT: no"
+    },
+    {
+      "id": "I07",
+      "group": "clear_irrelevant",
+      "phase": "measured_warm",
+      "expected": "no",
+      "status": "PASS",
+      "elapsed_ms": 184.5813330146484,
+      "decision": "no",
+      "parse_fallback_used": false,
+      "raw_llm_text": "VERDICT: no"
+    },
+    {
+      "id": "I08",
+      "group": "clear_irrelevant",
+      "phase": "measured_warm",
+      "expected": "no",
+      "status": "PASS",
+      "elapsed_ms": 183.4740840131417,
+      "decision": "no",
+      "parse_fallback_used": false,
+      "raw_llm_text": "VERDICT: no"
+    },
+    {
+      "id": "I09",
+      "group": "clear_irrelevant",
+      "phase": "measured_warm",
+      "expected": "no",
+      "status": "PASS",
+      "elapsed_ms": 271.80245803901926,
+      "decision": "no",
+      "parse_fallback_used": false,
+      "raw_llm_text": "VERDICT: no"
+    },
+    {
+      "id": "I10",
+      "group": "clear_irrelevant",
+      "phase": "measured_warm",
+      "expected": "no",
+      "status": "PASS",
+      "elapsed_ms": 177.0279590273276,
+      "decision": "no",
+      "parse_fallback_used": false,
+      "raw_llm_text": "VERDICT: no"
+    },
+    {
+      "id": "B01",
+      "group": "borderline_related_insufficient",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 177.6858750381507,
+      "decision": "no",
+      "parse_fallback_used": false,
+      "raw_llm_text": "VERDICT: no"
+    },
+    {
+      "id": "B02",
+      "group": "borderline_related_insufficient",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 189.74941602209583,
+      "decision": "yes",
+      "parse_fallback_used": false,
+      "raw_llm_text": "VERDICT: yes"
+    },
+    {
+      "id": "B03",
+      "group": "borderline_related_insufficient",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 178.68399998405948,
+      "decision": "no",
+      "parse_fallback_used": false,
+      "raw_llm_text": "VERDICT: no"
+    },
+    {
+      "id": "B04",
+      "group": "borderline_related_insufficient",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 173.48391603445634,
+      "decision": "no",
+      "parse_fallback_used": false,
+      "raw_llm_text": "VERDICT: no"
+    },
+    {
+      "id": "B05",
+      "group": "borderline_related_insufficient",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 629.2845419957303,
+      "decision": "no",
+      "parse_fallback_used": false,
+      "raw_llm_text": "The document does not discuss or mention any concept related to query-rewriting prompts or their effectiveness in giving the best retrieval results. VERDICT: no"
+    },
+    {
+      "id": "B06",
+      "group": "borderline_related_insufficient",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 178.86312498012558,
+      "decision": "yes",
+      "parse_fallback_used": false,
+      "raw_llm_text": "VERDICT: yes"
+    },
+    {
+      "id": "B07",
+      "group": "borderline_related_insufficient",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 554.3650419567712,
+      "decision": "yes",
+      "parse_fallback_used": false,
+      "raw_llm_text": "The document discusses using an LLM as a judge for evaluating RAGAS. VERDICT: yes"
+    },
+    {
+      "id": "B08",
+      "group": "borderline_related_insufficient",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 634.9480830249377,
+      "decision": "yes",
+      "parse_fallback_used": false,
+      "raw_llm_text": "The document discusses the concept of faithfulness, which is a measure of whether the generated answer is supported by the retrieved context. VERDICT: yes"
+    },
+    {
+      "id": "B09",
+      "group": "borderline_related_insufficient",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 173.9584999741055,
+      "decision": "no",
+      "parse_fallback_used": false,
+      "raw_llm_text": "VERDICT: no"
+    },
+    {
+      "id": "B10",
+      "group": "borderline_related_insufficient",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 188.80983401322737,
+      "decision": "yes",
+      "parse_fallback_used": false,
+      "raw_llm_text": "VERDICT: yes"
+    }
+  ],
+  "laya": [
+    {
+      "id": "R01",
+      "group": "clear_relevant",
+      "phase": "warmup_excluded",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 351.555792032741,
+      "decision": "yes",
+      "p_relevant": 0.8894,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.8894,
+              "confidence": 0.8894,
+              "answer_confidence": 0.8894,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 235,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "R01",
+      "group": "clear_relevant",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 87.11783401668072,
+      "decision": "yes",
+      "p_relevant": 0.8894,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.8894,
+              "confidence": 0.8894,
+              "answer_confidence": 0.8894,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 235,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "R02",
+      "group": "clear_relevant",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 84.24054202623665,
+      "decision": "no",
+      "p_relevant": 0.4896,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.4896,
+              "confidence": 0.5104,
+              "answer_confidence": 0.5104,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 211,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "R03",
+      "group": "clear_relevant",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 85.83125000586733,
+      "decision": "yes",
+      "p_relevant": 0.9005,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.9005,
+              "confidence": 0.9005,
+              "answer_confidence": 0.9005,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 213,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "R04",
+      "group": "clear_relevant",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 75.07708302000538,
+      "decision": "yes",
+      "p_relevant": 0.8743,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.8743,
+              "confidence": 0.8743,
+              "answer_confidence": 0.8743,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 180,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "R05",
+      "group": "clear_relevant",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 73.80091701634228,
+      "decision": "yes",
+      "p_relevant": 0.7844,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.7844,
+              "confidence": 0.7844,
+              "answer_confidence": 0.7844,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 192,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "R06",
+      "group": "clear_relevant",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 71.42366701737046,
+      "decision": "yes",
+      "p_relevant": 0.8689,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.8689,
+              "confidence": 0.8689,
+              "answer_confidence": 0.8689,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 179,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "R07",
+      "group": "clear_relevant",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 93.73820800101385,
+      "decision": "yes",
+      "p_relevant": 0.7147,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.7147,
+              "confidence": 0.7147,
+              "answer_confidence": 0.7147,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 196,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "R08",
+      "group": "clear_relevant",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 81.48729201639071,
+      "decision": "yes",
+      "p_relevant": 0.8398,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.8398,
+              "confidence": 0.8398,
+              "answer_confidence": 0.8398,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 200,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "R09",
+      "group": "clear_relevant",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 69.86004195641726,
+      "decision": "yes",
+      "p_relevant": 0.793,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.793,
+              "confidence": 0.793,
+              "answer_confidence": 0.793,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 175,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "R10",
+      "group": "clear_relevant",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 111.23704200144857,
+      "decision": "yes",
+      "p_relevant": 0.8579,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.8579,
+              "confidence": 0.8579,
+              "answer_confidence": 0.8579,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 294,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "I01",
+      "group": "clear_irrelevant",
+      "phase": "measured_warm",
+      "expected": "no",
+      "status": "PASS",
+      "elapsed_ms": 85.9466660185717,
+      "decision": "no",
+      "p_relevant": 0.0011,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.0011,
+              "confidence": 0.9989,
+              "answer_confidence": 0.9989,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 218,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "I02",
+      "group": "clear_irrelevant",
+      "phase": "measured_warm",
+      "expected": "no",
+      "status": "PASS",
+      "elapsed_ms": 107.86587500479072,
+      "decision": "no",
+      "p_relevant": 0.0538,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.0538,
+              "confidence": 0.9462,
+              "answer_confidence": 0.9462,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 299,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "I03",
+      "group": "clear_irrelevant",
+      "phase": "measured_warm",
+      "expected": "no",
+      "status": "PASS",
+      "elapsed_ms": 84.36958299716935,
+      "decision": "no",
+      "p_relevant": 0.0639,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.0639,
+              "confidence": 0.9361,
+              "answer_confidence": 0.9361,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 210,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "I04",
+      "group": "clear_irrelevant",
+      "phase": "measured_warm",
+      "expected": "no",
+      "status": "PASS",
+      "elapsed_ms": 82.36420899629593,
+      "decision": "no",
+      "p_relevant": 0.066,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.066,
+              "confidence": 0.934,
+              "answer_confidence": 0.934,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 199,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "I05",
+      "group": "clear_irrelevant",
+      "phase": "measured_warm",
+      "expected": "no",
+      "status": "PASS",
+      "elapsed_ms": 76.18341699708253,
+      "decision": "no",
+      "p_relevant": 0.0985,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.0985,
+              "confidence": 0.9015,
+              "answer_confidence": 0.9015,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 176,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "I06",
+      "group": "clear_irrelevant",
+      "phase": "measured_warm",
+      "expected": "no",
+      "status": "PASS",
+      "elapsed_ms": 69.5915839751251,
+      "decision": "no",
+      "p_relevant": 0.0803,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.0803,
+              "confidence": 0.9197,
+              "answer_confidence": 0.9197,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 178,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "I07",
+      "group": "clear_irrelevant",
+      "phase": "measured_warm",
+      "expected": "no",
+      "status": "PASS",
+      "elapsed_ms": 70.44749998021871,
+      "decision": "no",
+      "p_relevant": 0.0893,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.0893,
+              "confidence": 0.9107,
+              "answer_confidence": 0.9107,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 182,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "I08",
+      "group": "clear_irrelevant",
+      "phase": "measured_warm",
+      "expected": "no",
+      "status": "PASS",
+      "elapsed_ms": 91.23487496981397,
+      "decision": "no",
+      "p_relevant": 0.0163,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.0163,
+              "confidence": 0.9837,
+              "answer_confidence": 0.9837,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 237,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "I09",
+      "group": "clear_irrelevant",
+      "phase": "measured_warm",
+      "expected": "no",
+      "status": "PASS",
+      "elapsed_ms": 87.98641699831933,
+      "decision": "no",
+      "p_relevant": 0.0256,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.0256,
+              "confidence": 0.9744,
+              "answer_confidence": 0.9744,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 203,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "I10",
+      "group": "clear_irrelevant",
+      "phase": "measured_warm",
+      "expected": "no",
+      "status": "PASS",
+      "elapsed_ms": 71.33537495974451,
+      "decision": "no",
+      "p_relevant": 0.1082,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.1082,
+              "confidence": 0.8918,
+              "answer_confidence": 0.8918,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 178,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "B01",
+      "group": "borderline_related_insufficient",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 83.91979202860966,
+      "decision": "no",
+      "p_relevant": 0.2146,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.2146,
+              "confidence": 0.7854,
+              "answer_confidence": 0.7854,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 237,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "B02",
+      "group": "borderline_related_insufficient",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 69.99479100340977,
+      "decision": "no",
+      "p_relevant": 0.4416,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.4416,
+              "confidence": 0.5584,
+              "answer_confidence": 0.5584,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 173,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "B03",
+      "group": "borderline_related_insufficient",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 89.14720796747133,
+      "decision": "yes",
+      "p_relevant": 0.785,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.785,
+              "confidence": 0.785,
+              "answer_confidence": 0.785,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 214,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "B04",
+      "group": "borderline_related_insufficient",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 70.70983399171382,
+      "decision": "yes",
+      "p_relevant": 0.6593,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.6593,
+              "confidence": 0.6593,
+              "answer_confidence": 0.6593,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 176,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "B05",
+      "group": "borderline_related_insufficient",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 78.86645896360278,
+      "decision": "yes",
+      "p_relevant": 0.864,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.864,
+              "confidence": 0.864,
+              "answer_confidence": 0.864,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 199,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "B06",
+      "group": "borderline_related_insufficient",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 83.68808403611183,
+      "decision": "yes",
+      "p_relevant": 0.5155,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.5155,
+              "confidence": 0.5155,
+              "answer_confidence": 0.5155,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 198,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "B07",
+      "group": "borderline_related_insufficient",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 63.73708299361169,
+      "decision": "yes",
+      "p_relevant": 0.7374,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.7374,
+              "confidence": 0.7374,
+              "answer_confidence": 0.7374,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 175,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "B08",
+      "group": "borderline_related_insufficient",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 104.74079102277756,
+      "decision": "yes",
+      "p_relevant": 0.792,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.792,
+              "confidence": 0.792,
+              "answer_confidence": 0.792,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 296,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "B09",
+      "group": "borderline_related_insufficient",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 83.56845797970891,
+      "decision": "no",
+      "p_relevant": 0.1248,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.1248,
+              "confidence": 0.8752,
+              "answer_confidence": 0.8752,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 237,
+            "output_tokens": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "B10",
+      "group": "borderline_related_insufficient",
+      "phase": "measured_warm",
+      "expected": "yes",
+      "status": "PASS",
+      "elapsed_ms": 66.34045898681507,
+      "decision": "no",
+      "p_relevant": 0.2846,
+      "raw_sdk_results": [
+        {
+          "model": "laya-rl-agent",
+          "answers": {
+            "relevant": {
+              "type": "noul",
+              "noul": 0.2846,
+              "confidence": 0.7154,
+              "answer_confidence": 0.7154,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 172,
+            "output_tokens": 0
+          }
+        }
+      ]
+    }
+  ]
+}

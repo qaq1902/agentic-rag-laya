@@ -1,0 +1,90 @@
+{
+  "created_utc": "2026-10-28T16:24:43.629796+00:00",
+  "source_copies": [
+    {
+      "fixture": "knowledge",
+      "source": "data/documents/agentic_rag_patterns.md",
+      "copy": "outputs/gate_c2_langgraph_20261029/fixtures/knowledge/documents/agentic_rag_patterns.md",
+      "sha256": "12a8ffb54fadf64542ff8bc654cac38b79f45513cfd67ad5cb9f2038be95f6e4"
+    },
+    {
+      "fixture": "knowledge",
+      "source": "data/documents/evaluation_ragas.md",
+      "copy": "outputs/gate_c2_langgraph_20261029/fixtures/knowledge/documents/evaluation_ragas.md",
+      "sha256": "6984f0089af34c52a91410fde75d3a533745e535dbc37d60820a8f7161528640"
+    },
+    {
+      "fixture": "knowledge",
+      "source": "data/documents/rag_fundamentals.md",
+      "copy": "outputs/gate_c2_langgraph_20261029/fixtures/knowledge/documents/rag_fundamentals.md",
+      "sha256": "b45b8f0446c71a103a75ac30aae8d6989b86ebdf1a85f9db3a0a91d0ec3758c9"
+    },
+    {
+      "fixture": "noise",
+      "source": "data/tables/product_reviews.csv",
+      "copy": "outputs/gate_c2_langgraph_20261029/fixtures/noise/documents/product_reviews.txt",
+      "sha256": "e5b78441df3ebf8f0d4e7ccac4cd0448f2c159aa2d0ca9a2973a6ee8ef68554a",
+      "note": "Exact CSV bytes copied to .txt so the unchanged text-document loader can ingest a clearly unrelated corpus; original CSV unchanged."
+    }
+  ],
+  "cases": [
+    {
+      "id": "S1",
+      "fixture": "knowledge",
+      "question": "What are the three stages of a classic RAG pipeline?",
+      "purpose": "Relevant document path; retrieve real RAG evidence, keep relevant chunks, generate and run original LLM grounding grader.",
+      "expected_initial_route": "vectorstore",
+      "expected_recovery": false,
+      "answer_evidence": "data/documents/rag_fundamentals.md:9-20; ingestion, retrieval, generation"
+    },
+    {
+      "id": "S2",
+      "fixture": "knowledge",
+      "question": "What does the faithfulness metric in RAGAS measure?",
+      "purpose": "Evaluation-knowledge retrieval and relevance filtering among real mixed-topic chunks.",
+      "expected_initial_route": "vectorstore",
+      "expected_recovery": false,
+      "answer_evidence": "data/documents/evaluation_ragas.md:11-14; support of generated claims by retrieved context"
+    },
+    {
+      "id": "S3",
+      "fixture": "noise",
+      "question": "According to my documents, why does RAG use an embedding model to retrieve relevant text chunks?",
+      "purpose": "Controlled no-relevant-evidence fixture; real graders should reject actual store-review chunks, execute bounded rewriting, then original web fallback.",
+      "expected_initial_route": "vectorstore",
+      "expected_recovery": true,
+      "answer_evidence": "No RAG/embedding explanation exists in this copied product-review corpus. Recovery must not fabricate document provenance."
+    }
+  ],
+  "conditions": {
+    "router": "original llm",
+    "generation": "original llm",
+    "generation_grader": "original LLM grounding chain/conditional edge",
+    "llm_model": "qwen2.5:3b",
+    "temperature": 0,
+    "document_grader_threshold": 0.5,
+    "max_retries": 2,
+    "retrieval_k": 4,
+    "only_ab_factor": "DOCUMENT_GRADER_BACKEND=llm or laya",
+    "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "laya_checkpoint": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+    "device": "actual MPS for Laya; configured SentenceTransformer defaults; Ollama Metal"
+  },
+  "protocol": {
+    "index": "Use native ingestion at chunk size 800/overlap 120 on isolated copies only; close preparation process, freeze logical index contents, clone each snapshot for each run.",
+    "runs": [
+      "S1_llm",
+      "S1_laya",
+      "S2_laya",
+      "S2_llm",
+      "S3_llm",
+      "S3_laya"
+    ],
+    "serial": true,
+    "observability": "LangChain callbacks, LangGraph update/value streams and read-only model hooks outside original nodes; no monkeypatching model decisions, sources or graph nodes.",
+    "timing": "Measure native graph.stream entry to completion, including all nodes/conditional branches, retrieval and network fallback. Report preparation/model loading separately; do not equate with C1 grader-only latencies.",
+    "counts": "Count actual LLM calls by role and Laya SDK/forward calls; separately count retrieval embedding forwards, source-tool activity and preparation.",
+    "live_web": "Use original real DDGS search on recovery. Web results can change between sequential runs and are logged; this is an integration validation, not a controlled answer-quality benchmark.",
+    "pass_criteria": "Native execution completes without integration error; LLM Router route remains observed, document outputs match actual per-document grader decisions, original transitions/retry limits and recovery hold, generation/grounding stay LLM, nonempty final response. Report answer/provenance problems separately; do not tune or fix."
+  }
+}

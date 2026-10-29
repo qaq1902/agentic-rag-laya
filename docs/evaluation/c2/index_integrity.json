@@ -1,0 +1,38 @@
+[
+  {
+    "run": "S1_llm",
+    "logical_index_unchanged": true,
+    "fingerprint": "64d6fd80461eddb7520204fcfe0d24d57b92f5eb0642b30c70ca2eb7934a03bf",
+    "items": 14
+  },
+  {
+    "run": "S1_laya",
+    "logical_index_unchanged": true,
+    "fingerprint": "64d6fd80461eddb7520204fcfe0d24d57b92f5eb0642b30c70ca2eb7934a03bf",
+    "items": 14
+  },
+  {
+    "run": "S2_laya",
+    "logical_index_unchanged": true,
+    "fingerprint": "64d6fd80461eddb7520204fcfe0d24d57b92f5eb0642b30c70ca2eb7934a03bf",
+    "items": 14
+  },
+  {
+    "run": "S2_llm",
+    "logical_index_unchanged": true,
+    "fingerprint": "64d6fd80461eddb7520204fcfe0d24d57b92f5eb0642b30c70ca2eb7934a03bf",
+    "items": 14
+  },
+  {
+    "run": "S3_llm",
+    "logical_index_unchanged": true,
+    "fingerprint": "58449755af674b20a7ae1822787b0ad50683bfae3f696b98095127a07e384ef6",
+    "items": 3
+  },
+  {
+    "run": "S3_laya",
+    "logical_index_unchanged": true,
+    "fingerprint": "58449755af674b20a7ae1822787b0ad50683bfae3f696b98095127a07e384ef6",
+    "items": 3
+  }
+]

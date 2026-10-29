@@ -1,0 +1,657 @@
+{
+  "status": "PASS_FUNCTIONAL_WITH_OBSERVABILITY_LIMITATION",
+  "functional_runs_passed": 6,
+  "automatic_original_harness_all_green": false,
+  "runs": [
+    {
+      "run": "S1_llm",
+      "functional_status": "PASS",
+      "native_graph_completed": true,
+      "native_runtime_errors": [],
+      "raw_harness_status": "FAIL",
+      "observer_error": "Post-completion embedding forward counter assertion",
+      "llm_calls": 7,
+      "llm_by_role": {
+        "router": 1,
+        "document_grader": 4,
+        "generator": 1,
+        "generation_grader": 1
+      },
+      "laya_predictions": 0,
+      "laya_actual_forwards": 0,
+      "logical_query_embedding_calls_inferred": 1,
+      "embedding_actual_forward_count": null,
+      "embedding_count_note": "Native Chroma calls embed_query once per retrieval. Low-level module hook was bypassed by SentenceTransformer's direct model.forward dispatch; it did not measure actual encoder forwards.",
+      "filtering": [
+        {
+          "input_count": 4,
+          "kept_count": 2,
+          "decisions": [
+            "yes",
+            "yes",
+            "no",
+            "no"
+          ],
+          "expected_kept_sha256": [
+            "177b1f5defbae922cac19578d7af8dd156c7cb35ac464ad81ee6afa1d4917367",
+            "24a8b4d967953aa9c8191ebaee15900a96412ec0db00d1da7a42d2a6c195619e"
+          ],
+          "actual_kept_sha256": [
+            "177b1f5defbae922cac19578d7af8dd156c7cb35ac464ad81ee6afa1d4917367",
+            "24a8b4d967953aa9c8191ebaee15900a96412ec0db00d1da7a42d2a6c195619e"
+          ],
+          "question": "What are the three stages of a classic RAG pipeline?",
+          "pass": true
+        }
+      ],
+      "transitions": [
+        "route",
+        "retrieve",
+        "grade_documents",
+        "generate"
+      ],
+      "initial_route": "vectorstore",
+      "final_datasource": "vectorstore",
+      "final_retries": 0,
+      "end_to_end_ms": 5649.922167009208,
+      "embedding_setup_ms": 6875.423374993261,
+      "laya_setup_ms": null,
+      "raw_failure": {
+        "type": "AssertionError",
+        "stage": "after graph completion",
+        "assertion": "len(embedding_forwards) == len(retrieval_calls)",
+        "raw_record_status": "FAIL"
+      },
+      "branch_decisions": [
+        {
+          "name": "select_datasource",
+          "decision": "vectorstore"
+        },
+        {
+          "name": "decide_after_grading",
+          "decision": "generate"
+        },
+        {
+          "name": "grade_generation",
+          "decision": "useful"
+        }
+      ],
+      "retrievals": [
+        {
+          "query": "What are the three stages of a classic RAG pipeline?",
+          "document_sha256": [
+            "177b1f5defbae922cac19578d7af8dd156c7cb35ac464ad81ee6afa1d4917367",
+            "24a8b4d967953aa9c8191ebaee15900a96412ec0db00d1da7a42d2a6c195619e",
+            "b7ab2c7667cd043adaf960ebf21c5e72cb501bce11cda00b200b319c12289a90",
+            "c675e873e83d428f261040f64f2c422bc407f58fe1d7614b409aa776329cd4b7"
+          ]
+        }
+      ]
+    },
+    {
+      "run": "S1_laya",
+      "functional_status": "PASS",
+      "native_graph_completed": true,
+      "native_runtime_errors": [],
+      "raw_harness_status": "FAIL",
+      "observer_error": "Post-completion embedding forward counter assertion",
+      "llm_calls": 3,
+      "llm_by_role": {
+        "router": 1,
+        "generator": 1,
+        "generation_grader": 1
+      },
+      "laya_predictions": 4,
+      "laya_actual_forwards": 4,
+      "logical_query_embedding_calls_inferred": 1,
+      "embedding_actual_forward_count": null,
+      "embedding_count_note": "Native Chroma calls embed_query once per retrieval. Low-level module hook was bypassed by SentenceTransformer's direct model.forward dispatch; it did not measure actual encoder forwards.",
+      "filtering": [
+        {
+          "input_count": 4,
+          "kept_count": 1,
+          "decisions": [
+            "yes",
+            "no",
+            "no",
+            "no"
+          ],
+          "expected_kept_sha256": [
+            "177b1f5defbae922cac19578d7af8dd156c7cb35ac464ad81ee6afa1d4917367"
+          ],
+          "actual_kept_sha256": [
+            "177b1f5defbae922cac19578d7af8dd156c7cb35ac464ad81ee6afa1d4917367"
+          ],
+          "question": "What are the three stages of a classic RAG pipeline?",
+          "pass": true
+        }
+      ],
+      "transitions": [
+        "route",
+        "retrieve",
+        "grade_documents",
+        "generate"
+      ],
+      "initial_route": "vectorstore",
+      "final_datasource": "vectorstore",
+      "final_retries": 0,
+      "end_to_end_ms": 4858.529917022679,
+      "embedding_setup_ms": 5950.657375040464,
+      "laya_setup_ms": 2357.4121660203673,
+      "raw_failure": {
+        "type": "AssertionError",
+        "stage": "after graph completion",
+        "assertion": "len(embedding_forwards) == len(retrieval_calls)",
+        "raw_record_status": "FAIL"
+      },
+      "branch_decisions": [
+        {
+          "name": "select_datasource",
+          "decision": "vectorstore"
+        },
+        {
+          "name": "decide_after_grading",
+          "decision": "generate"
+        },
+        {
+          "name": "grade_generation",
+          "decision": "useful"
+        }
+      ],
+      "retrievals": [
+        {
+          "query": "What are the three stages of a classic RAG pipeline?",
+          "document_sha256": [
+            "177b1f5defbae922cac19578d7af8dd156c7cb35ac464ad81ee6afa1d4917367",
+            "24a8b4d967953aa9c8191ebaee15900a96412ec0db00d1da7a42d2a6c195619e",
+            "b7ab2c7667cd043adaf960ebf21c5e72cb501bce11cda00b200b319c12289a90",
+            "c675e873e83d428f261040f64f2c422bc407f58fe1d7614b409aa776329cd4b7"
+          ]
+        }
+      ]
+    },
+    {
+      "run": "S2_laya",
+      "functional_status": "PASS",
+      "native_graph_completed": true,
+      "native_runtime_errors": [],
+      "raw_harness_status": "FAIL",
+      "observer_error": "Post-completion embedding forward counter assertion",
+      "llm_calls": 3,
+      "llm_by_role": {
+        "router": 1,
+        "generator": 1,
+        "generation_grader": 1
+      },
+      "laya_predictions": 4,
+      "laya_actual_forwards": 4,
+      "logical_query_embedding_calls_inferred": 1,
+      "embedding_actual_forward_count": null,
+      "embedding_count_note": "Native Chroma calls embed_query once per retrieval. Low-level module hook was bypassed by SentenceTransformer's direct model.forward dispatch; it did not measure actual encoder forwards.",
+      "filtering": [
+        {
+          "input_count": 4,
+          "kept_count": 1,
+          "decisions": [
+            "yes",
+            "no",
+            "no",
+            "no"
+          ],
+          "expected_kept_sha256": [
+            "bacc81c947fca5cf31b864cc023c3140426989041993d53f44e914ce1e5798e6"
+          ],
+          "actual_kept_sha256": [
+            "bacc81c947fca5cf31b864cc023c3140426989041993d53f44e914ce1e5798e6"
+          ],
+          "question": "What does the faithfulness metric in RAGAS measure?",
+          "pass": true
+        }
+      ],
+      "transitions": [
+        "route",
+        "retrieve",
+        "grade_documents",
+        "generate"
+      ],
+      "initial_route": "vectorstore",
+      "final_datasource": "vectorstore",
+      "final_retries": 0,
+      "end_to_end_ms": 2714.7322079981677,
+      "embedding_setup_ms": 5414.678458007984,
+      "laya_setup_ms": 1758.785790996626,
+      "raw_failure": {
+        "type": "AssertionError",
+        "stage": "after graph completion",
+        "assertion": "len(embedding_forwards) == len(retrieval_calls)",
+        "raw_record_status": "FAIL"
+      },
+      "branch_decisions": [
+        {
+          "name": "select_datasource",
+          "decision": "vectorstore"
+        },
+        {
+          "name": "decide_after_grading",
+          "decision": "generate"
+        },
+        {
+          "name": "grade_generation",
+          "decision": "useful"
+        }
+      ],
+      "retrievals": [
+        {
+          "query": "What does the faithfulness metric in RAGAS measure?",
+          "document_sha256": [
+            "bacc81c947fca5cf31b864cc023c3140426989041993d53f44e914ce1e5798e6",
+            "d0fc3f615eb71667a8b6623061d678393a984629d1e25476056ae397781f92af",
+            "477b678a07eeb5a1d739f0aac8abcb4229f4ac831522d4dd683e99b623d244f9",
+            "eb4354566e9c9aca50205e3a6315892619a97980cd15112f8478469967b33b35"
+          ]
+        }
+      ]
+    },
+    {
+      "run": "S2_llm",
+      "functional_status": "PASS",
+      "native_graph_completed": true,
+      "native_runtime_errors": [],
+      "raw_harness_status": "FAIL",
+      "observer_error": "Post-completion embedding forward counter assertion",
+      "llm_calls": 7,
+      "llm_by_role": {
+        "router": 1,
+        "document_grader": 4,
+        "generator": 1,
+        "generation_grader": 1
+      },
+      "laya_predictions": 0,
+      "laya_actual_forwards": 0,
+      "logical_query_embedding_calls_inferred": 1,
+      "embedding_actual_forward_count": null,
+      "embedding_count_note": "Native Chroma calls embed_query once per retrieval. Low-level module hook was bypassed by SentenceTransformer's direct model.forward dispatch; it did not measure actual encoder forwards.",
+      "filtering": [
+        {
+          "input_count": 4,
+          "kept_count": 2,
+          "decisions": [
+            "yes",
+            "yes",
+            "no",
+            "no"
+          ],
+          "expected_kept_sha256": [
+            "bacc81c947fca5cf31b864cc023c3140426989041993d53f44e914ce1e5798e6",
+            "d0fc3f615eb71667a8b6623061d678393a984629d1e25476056ae397781f92af"
+          ],
+          "actual_kept_sha256": [
+            "bacc81c947fca5cf31b864cc023c3140426989041993d53f44e914ce1e5798e6",
+            "d0fc3f615eb71667a8b6623061d678393a984629d1e25476056ae397781f92af"
+          ],
+          "question": "What does the faithfulness metric in RAGAS measure?",
+          "pass": true
+        }
+      ],
+      "transitions": [
+        "route",
+        "retrieve",
+        "grade_documents",
+        "generate"
+      ],
+      "initial_route": "vectorstore",
+      "final_datasource": "vectorstore",
+      "final_retries": 0,
+      "end_to_end_ms": 3678.421000018716,
+      "embedding_setup_ms": 5243.878457986284,
+      "laya_setup_ms": null,
+      "raw_failure": {
+        "type": "AssertionError",
+        "stage": "after graph completion",
+        "assertion": "len(embedding_forwards) == len(retrieval_calls)",
+        "raw_record_status": "FAIL"
+      },
+      "branch_decisions": [
+        {
+          "name": "select_datasource",
+          "decision": "vectorstore"
+        },
+        {
+          "name": "decide_after_grading",
+          "decision": "generate"
+        },
+        {
+          "name": "grade_generation",
+          "decision": "useful"
+        }
+      ],
+      "retrievals": [
+        {
+          "query": "What does the faithfulness metric in RAGAS measure?",
+          "document_sha256": [
+            "bacc81c947fca5cf31b864cc023c3140426989041993d53f44e914ce1e5798e6",
+            "d0fc3f615eb71667a8b6623061d678393a984629d1e25476056ae397781f92af",
+            "477b678a07eeb5a1d739f0aac8abcb4229f4ac831522d4dd683e99b623d244f9",
+            "eb4354566e9c9aca50205e3a6315892619a97980cd15112f8478469967b33b35"
+          ]
+        }
+      ]
+    },
+    {
+      "run": "S3_llm",
+      "functional_status": "PASS",
+      "native_graph_completed": true,
+      "native_runtime_errors": [],
+      "raw_harness_status": "FAIL",
+      "observer_error": "Post-completion embedding forward counter assertion",
+      "llm_calls": 14,
+      "llm_by_role": {
+        "router": 1,
+        "document_grader": 9,
+        "rewriter": 2,
+        "generator": 1,
+        "generation_grader": 1
+      },
+      "laya_predictions": 0,
+      "laya_actual_forwards": 0,
+      "logical_query_embedding_calls_inferred": 3,
+      "embedding_actual_forward_count": null,
+      "embedding_count_note": "Native Chroma calls embed_query once per retrieval. Low-level module hook was bypassed by SentenceTransformer's direct model.forward dispatch; it did not measure actual encoder forwards.",
+      "filtering": [
+        {
+          "input_count": 3,
+          "kept_count": 0,
+          "decisions": [
+            "no",
+            "no",
+            "no"
+          ],
+          "expected_kept_sha256": [],
+          "actual_kept_sha256": [],
+          "question": "According to my documents, why does RAG use an embedding model to retrieve relevant text chunks?",
+          "pass": true
+        },
+        {
+          "input_count": 3,
+          "kept_count": 0,
+          "decisions": [
+            "no",
+            "no",
+            "no"
+          ],
+          "expected_kept_sha256": [],
+          "actual_kept_sha256": [],
+          "question": "Why does RAG use an embedding model to find relevant text chunks according to my documents?",
+          "pass": true
+        },
+        {
+          "input_count": 3,
+          "kept_count": 0,
+          "decisions": [
+            "no",
+            "no",
+            "no"
+          ],
+          "expected_kept_sha256": [],
+          "actual_kept_sha256": [],
+          "question": "Why does RAG use an embedding model to find relevant text chunks in my documents?",
+          "pass": true
+        }
+      ],
+      "transitions": [
+        "route",
+        "retrieve",
+        "grade_documents",
+        "rewrite_query",
+        "retrieve",
+        "grade_documents",
+        "rewrite_query",
+        "retrieve",
+        "grade_documents",
+        "web_search",
+        "generate"
+      ],
+      "initial_route": "vectorstore",
+      "final_datasource": "web_search",
+      "final_retries": 2,
+      "end_to_end_ms": 26316.098541021347,
+      "embedding_setup_ms": 4635.003666975535,
+      "laya_setup_ms": null,
+      "raw_failure": {
+        "type": "AssertionError",
+        "stage": "after graph completion",
+        "assertion": "len(embedding_forwards) == len(retrieval_calls)",
+        "raw_record_status": "FAIL"
+      },
+      "branch_decisions": [
+        {
+          "name": "select_datasource",
+          "decision": "vectorstore"
+        },
+        {
+          "name": "decide_after_grading",
+          "decision": "rewrite"
+        },
+        {
+          "name": "route_after_rewrite",
+          "decision": "retrieve"
+        },
+        {
+          "name": "decide_after_grading",
+          "decision": "rewrite"
+        },
+        {
+          "name": "route_after_rewrite",
+          "decision": "retrieve"
+        },
+        {
+          "name": "decide_after_grading",
+          "decision": "web_search"
+        },
+        {
+          "name": "grade_generation",
+          "decision": "useful"
+        }
+      ],
+      "retrievals": [
+        {
+          "query": "According to my documents, why does RAG use an embedding model to retrieve relevant text chunks?",
+          "document_sha256": [
+            "a8fd03bdf240c29e27e5c33c41d8ca6835b160dbca15a7dd6fd2e074b3ec113c",
+            "39f0f38283a2b7e4004feec0998292d0e6bf57b9080cf6b43acb86c089911eb4",
+            "237e70946e16bfef245e5643140fd8f7fd4800c3f3da0bec97b0cf671b7f2084"
+          ]
+        },
+        {
+          "query": "Why does RAG use an embedding model to find relevant text chunks according to my documents?",
+          "document_sha256": [
+            "a8fd03bdf240c29e27e5c33c41d8ca6835b160dbca15a7dd6fd2e074b3ec113c",
+            "39f0f38283a2b7e4004feec0998292d0e6bf57b9080cf6b43acb86c089911eb4",
+            "237e70946e16bfef245e5643140fd8f7fd4800c3f3da0bec97b0cf671b7f2084"
+          ]
+        },
+        {
+          "query": "Why does RAG use an embedding model to find relevant text chunks in my documents?",
+          "document_sha256": [
+            "a8fd03bdf240c29e27e5c33c41d8ca6835b160dbca15a7dd6fd2e074b3ec113c",
+            "39f0f38283a2b7e4004feec0998292d0e6bf57b9080cf6b43acb86c089911eb4",
+            "237e70946e16bfef245e5643140fd8f7fd4800c3f3da0bec97b0cf671b7f2084"
+          ]
+        }
+      ]
+    },
+    {
+      "run": "S3_laya",
+      "functional_status": "PASS",
+      "native_graph_completed": true,
+      "native_runtime_errors": [],
+      "raw_harness_status": "FAIL",
+      "observer_error": "Post-completion embedding forward counter assertion",
+      "llm_calls": 5,
+      "llm_by_role": {
+        "router": 1,
+        "rewriter": 2,
+        "generator": 1,
+        "generation_grader": 1
+      },
+      "laya_predictions": 9,
+      "laya_actual_forwards": 9,
+      "logical_query_embedding_calls_inferred": 3,
+      "embedding_actual_forward_count": null,
+      "embedding_count_note": "Native Chroma calls embed_query once per retrieval. Low-level module hook was bypassed by SentenceTransformer's direct model.forward dispatch; it did not measure actual encoder forwards.",
+      "filtering": [
+        {
+          "input_count": 3,
+          "kept_count": 0,
+          "decisions": [
+            "no",
+            "no",
+            "no"
+          ],
+          "expected_kept_sha256": [],
+          "actual_kept_sha256": [],
+          "question": "According to my documents, why does RAG use an embedding model to retrieve relevant text chunks?",
+          "pass": true
+        },
+        {
+          "input_count": 3,
+          "kept_count": 0,
+          "decisions": [
+            "no",
+            "no",
+            "no"
+          ],
+          "expected_kept_sha256": [],
+          "actual_kept_sha256": [],
+          "question": "Why does RAG use an embedding model to find relevant text chunks according to my documents?",
+          "pass": true
+        },
+        {
+          "input_count": 3,
+          "kept_count": 0,
+          "decisions": [
+            "no",
+            "no",
+            "no"
+          ],
+          "expected_kept_sha256": [],
+          "actual_kept_sha256": [],
+          "question": "Why does RAG use an embedding model to find relevant text chunks in my documents?",
+          "pass": true
+        }
+      ],
+      "transitions": [
+        "route",
+        "retrieve",
+        "grade_documents",
+        "rewrite_query",
+        "retrieve",
+        "grade_documents",
+        "rewrite_query",
+        "retrieve",
+        "grade_documents",
+        "web_search",
+        "generate"
+      ],
+      "initial_route": "vectorstore",
+      "final_datasource": "web_search",
+      "final_retries": 2,
+      "end_to_end_ms": 10847.98762499122,
+      "embedding_setup_ms": 5212.197875021957,
+      "laya_setup_ms": 1790.8338329871185,
+      "raw_failure": {
+        "type": "AssertionError",
+        "stage": "after graph completion",
+        "assertion": "len(embedding_forwards) == len(retrieval_calls)",
+        "raw_record_status": "FAIL"
+      },
+      "branch_decisions": [
+        {
+          "name": "select_datasource",
+          "decision": "vectorstore"
+        },
+        {
+          "name": "decide_after_grading",
+          "decision": "rewrite"
+        },
+        {
+          "name": "route_after_rewrite",
+          "decision": "retrieve"
+        },
+        {
+          "name": "decide_after_grading",
+          "decision": "rewrite"
+        },
+        {
+          "name": "route_after_rewrite",
+          "decision": "retrieve"
+        },
+        {
+          "name": "decide_after_grading",
+          "decision": "web_search"
+        },
+        {
+          "name": "grade_generation",
+          "decision": "useful"
+        }
+      ],
+      "retrievals": [
+        {
+          "query": "According to my documents, why does RAG use an embedding model to retrieve relevant text chunks?",
+          "document_sha256": [
+            "a8fd03bdf240c29e27e5c33c41d8ca6835b160dbca15a7dd6fd2e074b3ec113c",
+            "39f0f38283a2b7e4004feec0998292d0e6bf57b9080cf6b43acb86c089911eb4",
+            "237e70946e16bfef245e5643140fd8f7fd4800c3f3da0bec97b0cf671b7f2084"
+          ]
+        },
+        {
+          "query": "Why does RAG use an embedding model to find relevant text chunks according to my documents?",
+          "document_sha256": [
+            "a8fd03bdf240c29e27e5c33c41d8ca6835b160dbca15a7dd6fd2e074b3ec113c",
+            "39f0f38283a2b7e4004feec0998292d0e6bf57b9080cf6b43acb86c089911eb4",
+            "237e70946e16bfef245e5643140fd8f7fd4800c3f3da0bec97b0cf671b7f2084"
+          ]
+        },
+        {
+          "query": "Why does RAG use an embedding model to find relevant text chunks in my documents?",
+          "document_sha256": [
+            "a8fd03bdf240c29e27e5c33c41d8ca6835b160dbca15a7dd6fd2e074b3ec113c",
+            "39f0f38283a2b7e4004feec0998292d0e6bf57b9080cf6b43acb86c089911eb4",
+            "237e70946e16bfef245e5643140fd8f7fd4800c3f3da0bec97b0cf671b7f2084"
+          ]
+        }
+      ]
+    }
+  ],
+  "paired_checks": [
+    {
+      "case": "S1",
+      "same_question_and_index_snapshot": true,
+      "all_retrieval_queries_and_results_identical": true,
+      "same_transition_sequence": true
+    },
+    {
+      "case": "S2",
+      "same_question_and_index_snapshot": true,
+      "all_retrieval_queries_and_results_identical": true,
+      "same_transition_sequence": true
+    },
+    {
+      "case": "S3",
+      "same_question_and_index_snapshot": true,
+      "all_retrieval_queries_and_results_identical": true,
+      "same_transition_sequence": true,
+      "web_urls_identical": true,
+      "web_snippet_texts_identical": false,
+      "web_document_counts": [
+        4,
+        4
+      ],
+      "final_responses_explicitly_label_web": [
+        false,
+        false
+      ]
+    }
+  ],
+  "publication_note": "Projection omits absolute paths, tracebacks, internal run IDs, raw messages, web snippets and final answer text. Raw FAIL statuses are retained; full original evidence remains unchanged and private."
+}

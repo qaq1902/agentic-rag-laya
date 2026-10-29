@@ -1,0 +1,1924 @@
+{
+  "accuracy": {
+    "A": {
+      "vectorstore": {
+        "correct": 1,
+        "total": 5
+      },
+      "sql": {
+        "correct": 0,
+        "total": 5
+      },
+      "web_search": {
+        "correct": 5,
+        "total": 5
+      },
+      "all": {
+        "correct": 6,
+        "total": 15
+      }
+    },
+    "C": {
+      "vectorstore": {
+        "correct": 0,
+        "total": 5
+      },
+      "sql": {
+        "correct": 5,
+        "total": 5
+      },
+      "web_search": {
+        "correct": 0,
+        "total": 5
+      },
+      "all": {
+        "correct": 5,
+        "total": 15
+      }
+    }
+  },
+  "latency": {
+    "A": {
+      "median_ms": 83.9635624724906,
+      "min_ms": 69.05983295291662,
+      "max_ms": 90.96520801540464
+    },
+    "C": {
+      "median_ms": 94.55247950972989,
+      "min_ms": 87.07337500527501,
+      "max_ms": 109.31362502742559
+    }
+  },
+  "unique_questions": 15,
+  "forward_calls": 90,
+  "excluded_warmups": 30,
+  "measured_calls": [
+    {
+      "case": "V1",
+      "variant": "C",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 109.31362502742559,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.347,
+        "sql": 0.4227,
+        "web_search": 0.2303
+      },
+      "decision_margin": 0.0757,
+      "expected_source_margin": -0.0757,
+      "expected": "vectorstore",
+      "matches_expected": false
+    },
+    {
+      "case": "V1",
+      "variant": "A",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 85.17833304358646,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.3001,
+        "sql": 0.4042,
+        "web_search": 0.2957
+      },
+      "decision_margin": 0.1041,
+      "expected_source_margin": -0.1041,
+      "expected": "vectorstore",
+      "matches_expected": false
+    },
+    {
+      "case": "V2",
+      "variant": "A",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 75.35004196688533,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.0814,
+        "sql": 0.1253,
+        "web_search": 0.7933
+      },
+      "decision_margin": 0.668,
+      "expected_source_margin": -0.7119,
+      "expected": "vectorstore",
+      "matches_expected": false
+    },
+    {
+      "case": "V2",
+      "variant": "C",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 94.27033399697393,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.2059,
+        "sql": 0.6177,
+        "web_search": 0.1764
+      },
+      "decision_margin": 0.4118,
+      "expected_source_margin": -0.4118,
+      "expected": "vectorstore",
+      "matches_expected": false
+    },
+    {
+      "case": "V3",
+      "variant": "C",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 95.92233301373199,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.2125,
+        "sql": 0.5352,
+        "web_search": 0.2523
+      },
+      "decision_margin": 0.2829,
+      "expected_source_margin": -0.3227,
+      "expected": "vectorstore",
+      "matches_expected": false
+    },
+    {
+      "case": "V3",
+      "variant": "A",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 87.01449999352917,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.1273,
+        "sql": 0.4371,
+        "web_search": 0.4357
+      },
+      "decision_margin": 0.0014,
+      "expected_source_margin": -0.3098,
+      "expected": "vectorstore",
+      "matches_expected": false
+    },
+    {
+      "case": "V4",
+      "variant": "A",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 86.587458034046,
+      "decision": "vectorstore",
+      "probabilities": {
+        "vectorstore": 0.6045,
+        "sql": 0.082,
+        "web_search": 0.3135
+      },
+      "decision_margin": 0.291,
+      "expected_source_margin": 0.291,
+      "expected": "vectorstore",
+      "matches_expected": true
+    },
+    {
+      "case": "V4",
+      "variant": "C",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 95.42125003645197,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.2889,
+        "sql": 0.4972,
+        "web_search": 0.2139
+      },
+      "decision_margin": 0.2083,
+      "expected_source_margin": -0.2083,
+      "expected": "vectorstore",
+      "matches_expected": false
+    },
+    {
+      "case": "V5",
+      "variant": "C",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 92.57100004469976,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.2537,
+        "sql": 0.5158,
+        "web_search": 0.2305
+      },
+      "decision_margin": 0.2621,
+      "expected_source_margin": -0.2621,
+      "expected": "vectorstore",
+      "matches_expected": false
+    },
+    {
+      "case": "V5",
+      "variant": "A",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 84.21845798147842,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.3385,
+        "sql": 0.2961,
+        "web_search": 0.3654
+      },
+      "decision_margin": 0.0269,
+      "expected_source_margin": -0.0269,
+      "expected": "vectorstore",
+      "matches_expected": false
+    },
+    {
+      "case": "S1",
+      "variant": "A",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 87.37800002563745,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.0965,
+        "sql": 0.4208,
+        "web_search": 0.4827
+      },
+      "decision_margin": 0.0619,
+      "expected_source_margin": -0.0619,
+      "expected": "sql",
+      "matches_expected": false
+    },
+    {
+      "case": "S1",
+      "variant": "C",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 95.02687503118068,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.1872,
+        "sql": 0.6228,
+        "web_search": 0.19
+      },
+      "decision_margin": 0.4328,
+      "expected_source_margin": 0.4328,
+      "expected": "sql",
+      "matches_expected": true
+    },
+    {
+      "case": "S2",
+      "variant": "C",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 95.63666599569842,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.1492,
+        "sql": 0.7219,
+        "web_search": 0.1289
+      },
+      "decision_margin": 0.5727,
+      "expected_source_margin": 0.5727,
+      "expected": "sql",
+      "matches_expected": true
+    },
+    {
+      "case": "S2",
+      "variant": "A",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 78.8649579626508,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.1035,
+        "sql": 0.2278,
+        "web_search": 0.6687
+      },
+      "decision_margin": 0.4409,
+      "expected_source_margin": -0.4409,
+      "expected": "sql",
+      "matches_expected": false
+    },
+    {
+      "case": "S3",
+      "variant": "A",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 85.82741598365828,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.1235,
+        "sql": 0.3518,
+        "web_search": 0.5247
+      },
+      "decision_margin": 0.1729,
+      "expected_source_margin": -0.1729,
+      "expected": "sql",
+      "matches_expected": false
+    },
+    {
+      "case": "S3",
+      "variant": "C",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 90.19837499363348,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.2207,
+        "sql": 0.6001,
+        "web_search": 0.1792
+      },
+      "decision_margin": 0.3794,
+      "expected_source_margin": 0.3794,
+      "expected": "sql",
+      "matches_expected": true
+    },
+    {
+      "case": "S4",
+      "variant": "C",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 99.4117499794811,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.213,
+        "sql": 0.55,
+        "web_search": 0.237
+      },
+      "decision_margin": 0.313,
+      "expected_source_margin": 0.313,
+      "expected": "sql",
+      "matches_expected": true
+    },
+    {
+      "case": "S4",
+      "variant": "A",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 87.72937499452382,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.1328,
+        "sql": 0.2056,
+        "web_search": 0.6617
+      },
+      "decision_margin": 0.4561,
+      "expected_source_margin": -0.4561,
+      "expected": "sql",
+      "matches_expected": false
+    },
+    {
+      "case": "S5",
+      "variant": "A",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 87.37775002373382,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.0337,
+        "sql": 0.1668,
+        "web_search": 0.7995
+      },
+      "decision_margin": 0.6327,
+      "expected_source_margin": -0.6327,
+      "expected": "sql",
+      "matches_expected": false
+    },
+    {
+      "case": "S5",
+      "variant": "C",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 92.75579202221707,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.1624,
+        "sql": 0.6675,
+        "web_search": 0.1701
+      },
+      "decision_margin": 0.4974,
+      "expected_source_margin": 0.4974,
+      "expected": "sql",
+      "matches_expected": true
+    },
+    {
+      "case": "W1",
+      "variant": "C",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 96.39199997764081,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.1954,
+        "sql": 0.4301,
+        "web_search": 0.3745
+      },
+      "decision_margin": 0.0556,
+      "expected_source_margin": -0.0556,
+      "expected": "web_search",
+      "matches_expected": false
+    },
+    {
+      "case": "W1",
+      "variant": "A",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 74.7292079613544,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.0363,
+        "sql": 0.0683,
+        "web_search": 0.8954
+      },
+      "decision_margin": 0.8271,
+      "expected_source_margin": 0.8271,
+      "expected": "web_search",
+      "matches_expected": true
+    },
+    {
+      "case": "W2",
+      "variant": "A",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 70.9220829885453,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.0495,
+        "sql": 0.0663,
+        "web_search": 0.8842
+      },
+      "decision_margin": 0.8179,
+      "expected_source_margin": 0.8179,
+      "expected": "web_search",
+      "matches_expected": true
+    },
+    {
+      "case": "W2",
+      "variant": "C",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 87.07337500527501,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.2071,
+        "sql": 0.4803,
+        "web_search": 0.3126
+      },
+      "decision_margin": 0.1677,
+      "expected_source_margin": -0.1677,
+      "expected": "web_search",
+      "matches_expected": false
+    },
+    {
+      "case": "W3",
+      "variant": "C",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 95.62541695777327,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.184,
+        "sql": 0.4314,
+        "web_search": 0.3845
+      },
+      "decision_margin": 0.0469,
+      "expected_source_margin": -0.0469,
+      "expected": "web_search",
+      "matches_expected": false
+    },
+    {
+      "case": "W3",
+      "variant": "A",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 70.82124997396022,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.0514,
+        "sql": 0.085,
+        "web_search": 0.8636
+      },
+      "decision_margin": 0.7786,
+      "expected_source_margin": 0.7786,
+      "expected": "web_search",
+      "matches_expected": true
+    },
+    {
+      "case": "W4",
+      "variant": "A",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 88.09591695899144,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.0659,
+        "sql": 0.0775,
+        "web_search": 0.8566
+      },
+      "decision_margin": 0.7791,
+      "expected_source_margin": 0.7791,
+      "expected": "web_search",
+      "matches_expected": true
+    },
+    {
+      "case": "W4",
+      "variant": "C",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 97.33249997952953,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.1665,
+        "sql": 0.7269,
+        "web_search": 0.1066
+      },
+      "decision_margin": 0.5604,
+      "expected_source_margin": -0.6203,
+      "expected": "web_search",
+      "matches_expected": false
+    },
+    {
+      "case": "W5",
+      "variant": "C",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 94.83462502248585,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.2301,
+        "sql": 0.4949,
+        "web_search": 0.275
+      },
+      "decision_margin": 0.2199,
+      "expected_source_margin": -0.2199,
+      "expected": "web_search",
+      "matches_expected": false
+    },
+    {
+      "case": "W5",
+      "variant": "A",
+      "round": 1,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 83.20908399764448,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.0808,
+        "sql": 0.138,
+        "web_search": 0.7813
+      },
+      "decision_margin": 0.6433,
+      "expected_source_margin": 0.6433,
+      "expected": "web_search",
+      "matches_expected": true
+    },
+    {
+      "case": "V1",
+      "variant": "A",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 85.66062501631677,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.3001,
+        "sql": 0.4042,
+        "web_search": 0.2957
+      },
+      "decision_margin": 0.1041,
+      "expected_source_margin": -0.1041,
+      "expected": "vectorstore",
+      "matches_expected": false
+    },
+    {
+      "case": "V1",
+      "variant": "C",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 94.87191698281094,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.347,
+        "sql": 0.4227,
+        "web_search": 0.2303
+      },
+      "decision_margin": 0.0757,
+      "expected_source_margin": -0.0757,
+      "expected": "vectorstore",
+      "matches_expected": false
+    },
+    {
+      "case": "V2",
+      "variant": "C",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 89.36233300482854,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.2059,
+        "sql": 0.6177,
+        "web_search": 0.1764
+      },
+      "decision_margin": 0.4118,
+      "expected_source_margin": -0.4118,
+      "expected": "vectorstore",
+      "matches_expected": false
+    },
+    {
+      "case": "V2",
+      "variant": "A",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 75.12474997201934,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.0814,
+        "sql": 0.1253,
+        "web_search": 0.7933
+      },
+      "decision_margin": 0.668,
+      "expected_source_margin": -0.7119,
+      "expected": "vectorstore",
+      "matches_expected": false
+    },
+    {
+      "case": "V3",
+      "variant": "A",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 82.19824999105185,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.1273,
+        "sql": 0.4371,
+        "web_search": 0.4357
+      },
+      "decision_margin": 0.0014,
+      "expected_source_margin": -0.3098,
+      "expected": "vectorstore",
+      "matches_expected": false
+    },
+    {
+      "case": "V3",
+      "variant": "C",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 95.79879196826369,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.2125,
+        "sql": 0.5352,
+        "web_search": 0.2523
+      },
+      "decision_margin": 0.2829,
+      "expected_source_margin": -0.3227,
+      "expected": "vectorstore",
+      "matches_expected": false
+    },
+    {
+      "case": "V4",
+      "variant": "C",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 97.58545795921236,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.2889,
+        "sql": 0.4972,
+        "web_search": 0.2139
+      },
+      "decision_margin": 0.2083,
+      "expected_source_margin": -0.2083,
+      "expected": "vectorstore",
+      "matches_expected": false
+    },
+    {
+      "case": "V4",
+      "variant": "A",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 81.4187919604592,
+      "decision": "vectorstore",
+      "probabilities": {
+        "vectorstore": 0.6045,
+        "sql": 0.082,
+        "web_search": 0.3135
+      },
+      "decision_margin": 0.291,
+      "expected_source_margin": 0.291,
+      "expected": "vectorstore",
+      "matches_expected": true
+    },
+    {
+      "case": "V5",
+      "variant": "A",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 81.93970797583461,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.3385,
+        "sql": 0.2961,
+        "web_search": 0.3654
+      },
+      "decision_margin": 0.0269,
+      "expected_source_margin": -0.0269,
+      "expected": "vectorstore",
+      "matches_expected": false
+    },
+    {
+      "case": "V5",
+      "variant": "C",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 92.60379202896729,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.2537,
+        "sql": 0.5158,
+        "web_search": 0.2305
+      },
+      "decision_margin": 0.2621,
+      "expected_source_margin": -0.2621,
+      "expected": "vectorstore",
+      "matches_expected": false
+    },
+    {
+      "case": "S1",
+      "variant": "C",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 93.76433299621567,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.1872,
+        "sql": 0.6228,
+        "web_search": 0.19
+      },
+      "decision_margin": 0.4328,
+      "expected_source_margin": 0.4328,
+      "expected": "sql",
+      "matches_expected": true
+    },
+    {
+      "case": "S1",
+      "variant": "A",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 83.70866696350276,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.0965,
+        "sql": 0.4208,
+        "web_search": 0.4827
+      },
+      "decision_margin": 0.0619,
+      "expected_source_margin": -0.0619,
+      "expected": "sql",
+      "matches_expected": false
+    },
+    {
+      "case": "S2",
+      "variant": "A",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 71.31324999500066,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.1035,
+        "sql": 0.2278,
+        "web_search": 0.6687
+      },
+      "decision_margin": 0.4409,
+      "expected_source_margin": -0.4409,
+      "expected": "sql",
+      "matches_expected": false
+    },
+    {
+      "case": "S2",
+      "variant": "C",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 91.24333399813622,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.1492,
+        "sql": 0.7219,
+        "web_search": 0.1289
+      },
+      "decision_margin": 0.5727,
+      "expected_source_margin": 0.5727,
+      "expected": "sql",
+      "matches_expected": true
+    },
+    {
+      "case": "S3",
+      "variant": "C",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 92.12395898066461,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.2207,
+        "sql": 0.6001,
+        "web_search": 0.1792
+      },
+      "decision_margin": 0.3794,
+      "expected_source_margin": 0.3794,
+      "expected": "sql",
+      "matches_expected": true
+    },
+    {
+      "case": "S3",
+      "variant": "A",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 90.96520801540464,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.1235,
+        "sql": 0.3518,
+        "web_search": 0.5247
+      },
+      "decision_margin": 0.1729,
+      "expected_source_margin": -0.1729,
+      "expected": "sql",
+      "matches_expected": false
+    },
+    {
+      "case": "S4",
+      "variant": "A",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 85.23116703145206,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.1328,
+        "sql": 0.2056,
+        "web_search": 0.6617
+      },
+      "decision_margin": 0.4561,
+      "expected_source_margin": -0.4561,
+      "expected": "sql",
+      "matches_expected": false
+    },
+    {
+      "case": "S4",
+      "variant": "C",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 90.3939160052687,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.213,
+        "sql": 0.55,
+        "web_search": 0.237
+      },
+      "decision_margin": 0.313,
+      "expected_source_margin": 0.313,
+      "expected": "sql",
+      "matches_expected": true
+    },
+    {
+      "case": "S5",
+      "variant": "C",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 96.77875001216307,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.1624,
+        "sql": 0.6675,
+        "web_search": 0.1701
+      },
+      "decision_margin": 0.4974,
+      "expected_source_margin": 0.4974,
+      "expected": "sql",
+      "matches_expected": true
+    },
+    {
+      "case": "S5",
+      "variant": "A",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 86.85795799829066,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.0337,
+        "sql": 0.1668,
+        "web_search": 0.7995
+      },
+      "decision_margin": 0.6327,
+      "expected_source_margin": -0.6327,
+      "expected": "sql",
+      "matches_expected": false
+    },
+    {
+      "case": "W1",
+      "variant": "A",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 69.05983295291662,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.0363,
+        "sql": 0.0683,
+        "web_search": 0.8954
+      },
+      "decision_margin": 0.8271,
+      "expected_source_margin": 0.8271,
+      "expected": "web_search",
+      "matches_expected": true
+    },
+    {
+      "case": "W1",
+      "variant": "C",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 92.97295799478889,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.1954,
+        "sql": 0.4301,
+        "web_search": 0.3745
+      },
+      "decision_margin": 0.0556,
+      "expected_source_margin": -0.0556,
+      "expected": "web_search",
+      "matches_expected": false
+    },
+    {
+      "case": "W2",
+      "variant": "C",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 93.81183300865814,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.2071,
+        "sql": 0.4803,
+        "web_search": 0.3126
+      },
+      "decision_margin": 0.1677,
+      "expected_source_margin": -0.1677,
+      "expected": "web_search",
+      "matches_expected": false
+    },
+    {
+      "case": "W2",
+      "variant": "A",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 74.17733297916129,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.0495,
+        "sql": 0.0663,
+        "web_search": 0.8842
+      },
+      "decision_margin": 0.8179,
+      "expected_source_margin": 0.8179,
+      "expected": "web_search",
+      "matches_expected": true
+    },
+    {
+      "case": "W3",
+      "variant": "A",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 74.32429102482274,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.0514,
+        "sql": 0.085,
+        "web_search": 0.8636
+      },
+      "decision_margin": 0.7786,
+      "expected_source_margin": 0.7786,
+      "expected": "web_search",
+      "matches_expected": true
+    },
+    {
+      "case": "W3",
+      "variant": "C",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 97.32287499355152,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.184,
+        "sql": 0.4314,
+        "web_search": 0.3845
+      },
+      "decision_margin": 0.0469,
+      "expected_source_margin": -0.0469,
+      "expected": "web_search",
+      "matches_expected": false
+    },
+    {
+      "case": "W4",
+      "variant": "C",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 89.24120798474178,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.1665,
+        "sql": 0.7269,
+        "web_search": 0.1066
+      },
+      "decision_margin": 0.5604,
+      "expected_source_margin": -0.6203,
+      "expected": "web_search",
+      "matches_expected": false
+    },
+    {
+      "case": "W4",
+      "variant": "A",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 85.73941700160503,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.0659,
+        "sql": 0.0775,
+        "web_search": 0.8566
+      },
+      "decision_margin": 0.7791,
+      "expected_source_margin": 0.7791,
+      "expected": "web_search",
+      "matches_expected": true
+    },
+    {
+      "case": "W5",
+      "variant": "A",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 90.90087498771027,
+      "decision": "web_search",
+      "probabilities": {
+        "vectorstore": 0.0808,
+        "sql": 0.138,
+        "web_search": 0.7813
+      },
+      "decision_margin": 0.6433,
+      "expected_source_margin": 0.6433,
+      "expected": "web_search",
+      "matches_expected": true
+    },
+    {
+      "case": "W5",
+      "variant": "C",
+      "round": 2,
+      "phase": "measured_warm",
+      "status": "PASS",
+      "warm_latency_ms": 89.59387498907745,
+      "decision": "sql",
+      "probabilities": {
+        "vectorstore": 0.2301,
+        "sql": 0.4949,
+        "web_search": 0.275
+      },
+      "decision_margin": 0.2199,
+      "expected_source_margin": -0.2199,
+      "expected": "web_search",
+      "matches_expected": false
+    }
+  ],
+  "real_mps": true,
+  "mocked": false,
+  "token_ranges": {
+    "A": [
+      190,
+      199
+    ],
+    "C": [
+      237,
+      246
+    ]
+  },
+  "state_token_range": [
+    130,
+    139
+  ],
+  "option_tokens": {
+    "A": [
+      12,
+      10,
+      14
+    ],
+    "C": [
+      32,
+      31,
+      20
+    ]
+  },
+  "per_case_summary": [
+    {
+      "id": "V1",
+      "question": "How do chunk size and chunk overlap affect retrieval quality in a RAG pipeline?",
+      "expected": "vectorstore",
+      "variant": "A",
+      "decision": "sql",
+      "correct": false,
+      "probabilities": {
+        "vectorstore": 0.3001,
+        "sql": 0.4042,
+        "web_search": 0.2957
+      },
+      "decision_margin": 0.1041,
+      "expected_source_margin": -0.1041,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 197,
+      "warm_latency_ms": [
+        85.17833304358646,
+        85.66062501631677
+      ],
+      "warm_median_ms": 85.41947902995162
+    },
+    {
+      "id": "V1",
+      "question": "How do chunk size and chunk overlap affect retrieval quality in a RAG pipeline?",
+      "expected": "vectorstore",
+      "variant": "C",
+      "decision": "sql",
+      "correct": false,
+      "probabilities": {
+        "vectorstore": 0.347,
+        "sql": 0.4227,
+        "web_search": 0.2303
+      },
+      "decision_margin": 0.0757,
+      "expected_source_margin": -0.0757,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 244,
+      "warm_latency_ms": [
+        109.31362502742559,
+        94.87191698281094
+      ],
+      "warm_median_ms": 102.09277100511827
+    },
+    {
+      "id": "V2",
+      "question": "Why does retrieval grading discard irrelevant chunks before answer generation?",
+      "expected": "vectorstore",
+      "variant": "A",
+      "decision": "web_search",
+      "correct": false,
+      "probabilities": {
+        "vectorstore": 0.0814,
+        "sql": 0.1253,
+        "web_search": 0.7933
+      },
+      "decision_margin": 0.668,
+      "expected_source_margin": -0.7119,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 192,
+      "warm_latency_ms": [
+        75.35004196688533,
+        75.12474997201934
+      ],
+      "warm_median_ms": 75.23739596945234
+    },
+    {
+      "id": "V2",
+      "question": "Why does retrieval grading discard irrelevant chunks before answer generation?",
+      "expected": "vectorstore",
+      "variant": "C",
+      "decision": "sql",
+      "correct": false,
+      "probabilities": {
+        "vectorstore": 0.2059,
+        "sql": 0.6177,
+        "web_search": 0.1764
+      },
+      "decision_margin": 0.4118,
+      "expected_source_margin": -0.4118,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 239,
+      "warm_latency_ms": [
+        94.27033399697393,
+        89.36233300482854
+      ],
+      "warm_median_ms": 91.81633350090124
+    },
+    {
+      "id": "V3",
+      "question": "What does query rewriting change when retrieval fails, and why should retries be bounded?",
+      "expected": "vectorstore",
+      "variant": "A",
+      "decision": "sql",
+      "correct": false,
+      "probabilities": {
+        "vectorstore": 0.1273,
+        "sql": 0.4371,
+        "web_search": 0.4357
+      },
+      "decision_margin": 0.0014,
+      "expected_source_margin": -0.3098,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 199,
+      "warm_latency_ms": [
+        87.01449999352917,
+        82.19824999105185
+      ],
+      "warm_median_ms": 84.60637499229051
+    },
+    {
+      "id": "V3",
+      "question": "What does query rewriting change when retrieval fails, and why should retries be bounded?",
+      "expected": "vectorstore",
+      "variant": "C",
+      "decision": "sql",
+      "correct": false,
+      "probabilities": {
+        "vectorstore": 0.2125,
+        "sql": 0.5352,
+        "web_search": 0.2523
+      },
+      "decision_margin": 0.2829,
+      "expected_source_margin": -0.3227,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 246,
+      "warm_latency_ms": [
+        95.92233301373199,
+        95.79879196826369
+      ],
+      "warm_median_ms": 95.86056249099784
+    },
+    {
+      "id": "V4",
+      "question": "How does RAGAS faithfulness differ from answer relevancy?",
+      "expected": "vectorstore",
+      "variant": "A",
+      "decision": "vectorstore",
+      "correct": true,
+      "probabilities": {
+        "vectorstore": 0.6045,
+        "sql": 0.082,
+        "web_search": 0.3135
+      },
+      "decision_margin": 0.291,
+      "expected_source_margin": 0.291,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 195,
+      "warm_latency_ms": [
+        86.587458034046,
+        81.4187919604592
+      ],
+      "warm_median_ms": 84.0031249972526
+    },
+    {
+      "id": "V4",
+      "question": "How does RAGAS faithfulness differ from answer relevancy?",
+      "expected": "vectorstore",
+      "variant": "C",
+      "decision": "sql",
+      "correct": false,
+      "probabilities": {
+        "vectorstore": 0.2889,
+        "sql": 0.4972,
+        "web_search": 0.2139
+      },
+      "decision_margin": 0.2083,
+      "expected_source_margin": -0.2083,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 242,
+      "warm_latency_ms": [
+        95.42125003645197,
+        97.58545795921236
+      ],
+      "warm_median_ms": 96.50335399783216
+    },
+    {
+      "id": "V5",
+      "question": "When would a RAG system be preferred over fine-tuning for changing knowledge?",
+      "expected": "vectorstore",
+      "variant": "A",
+      "decision": "web_search",
+      "correct": false,
+      "probabilities": {
+        "vectorstore": 0.3385,
+        "sql": 0.2961,
+        "web_search": 0.3654
+      },
+      "decision_margin": 0.0269,
+      "expected_source_margin": -0.0269,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 198,
+      "warm_latency_ms": [
+        84.21845798147842,
+        81.93970797583461
+      ],
+      "warm_median_ms": 83.07908297865652
+    },
+    {
+      "id": "V5",
+      "question": "When would a RAG system be preferred over fine-tuning for changing knowledge?",
+      "expected": "vectorstore",
+      "variant": "C",
+      "decision": "sql",
+      "correct": false,
+      "probabilities": {
+        "vectorstore": 0.2537,
+        "sql": 0.5158,
+        "web_search": 0.2305
+      },
+      "decision_margin": 0.2621,
+      "expected_source_margin": -0.2621,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 245,
+      "warm_latency_ms": [
+        92.57100004469976,
+        92.60379202896729
+      ],
+      "warm_median_ms": 92.58739603683352
+    },
+    {
+      "id": "S1",
+      "question": "Which products in our store cost more than 50, and what are their categories and prices?",
+      "expected": "sql",
+      "variant": "A",
+      "decision": "web_search",
+      "correct": false,
+      "probabilities": {
+        "vectorstore": 0.0965,
+        "sql": 0.4208,
+        "web_search": 0.4827
+      },
+      "decision_margin": 0.0619,
+      "expected_source_margin": -0.0619,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 199,
+      "warm_latency_ms": [
+        87.37800002563745,
+        83.70866696350276
+      ],
+      "warm_median_ms": 85.5433334945701
+    },
+    {
+      "id": "S1",
+      "question": "Which products in our store cost more than 50, and what are their categories and prices?",
+      "expected": "sql",
+      "variant": "C",
+      "decision": "sql",
+      "correct": true,
+      "probabilities": {
+        "vectorstore": 0.1872,
+        "sql": 0.6228,
+        "web_search": 0.19
+      },
+      "decision_margin": 0.4328,
+      "expected_source_margin": 0.4328,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 246,
+      "warm_latency_ms": [
+        95.02687503118068,
+        93.76433299621567
+      ],
+      "warm_median_ms": 94.39560401369818
+    },
+    {
+      "id": "S2",
+      "question": "How many units did our store sell in each country?",
+      "expected": "sql",
+      "variant": "A",
+      "decision": "web_search",
+      "correct": false,
+      "probabilities": {
+        "vectorstore": 0.1035,
+        "sql": 0.2278,
+        "web_search": 0.6687
+      },
+      "decision_margin": 0.4409,
+      "expected_source_margin": -0.4409,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 192,
+      "warm_latency_ms": [
+        78.8649579626508,
+        71.31324999500066
+      ],
+      "warm_median_ms": 75.08910397882573
+    },
+    {
+      "id": "S2",
+      "question": "How many units did our store sell in each country?",
+      "expected": "sql",
+      "variant": "C",
+      "decision": "sql",
+      "correct": true,
+      "probabilities": {
+        "vectorstore": 0.1492,
+        "sql": 0.7219,
+        "web_search": 0.1289
+      },
+      "decision_margin": 0.5727,
+      "expected_source_margin": 0.5727,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 239,
+      "warm_latency_ms": [
+        95.63666599569842,
+        91.24333399813622
+      ],
+      "warm_median_ms": 93.43999999691732
+    },
+    {
+      "id": "S3",
+      "question": "What was our store's total sales revenue for each product?",
+      "expected": "sql",
+      "variant": "A",
+      "decision": "web_search",
+      "correct": false,
+      "probabilities": {
+        "vectorstore": 0.1235,
+        "sql": 0.3518,
+        "web_search": 0.5247
+      },
+      "decision_margin": 0.1729,
+      "expected_source_margin": -0.1729,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 193,
+      "warm_latency_ms": [
+        85.82741598365828,
+        90.96520801540464
+      ],
+      "warm_median_ms": 88.39631199953146
+    },
+    {
+      "id": "S3",
+      "question": "What was our store's total sales revenue for each product?",
+      "expected": "sql",
+      "variant": "C",
+      "decision": "sql",
+      "correct": true,
+      "probabilities": {
+        "vectorstore": 0.2207,
+        "sql": 0.6001,
+        "web_search": 0.1792
+      },
+      "decision_margin": 0.3794,
+      "expected_source_margin": 0.3794,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 240,
+      "warm_latency_ms": [
+        90.19837499363348,
+        92.12395898066461
+      ],
+      "warm_median_ms": 91.16116698714904
+    },
+    {
+      "id": "S4",
+      "question": "What is the average customer rating for each product in our store?",
+      "expected": "sql",
+      "variant": "A",
+      "decision": "web_search",
+      "correct": false,
+      "probabilities": {
+        "vectorstore": 0.1328,
+        "sql": 0.2056,
+        "web_search": 0.6617
+      },
+      "decision_margin": 0.4561,
+      "expected_source_margin": -0.4561,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 194,
+      "warm_latency_ms": [
+        87.72937499452382,
+        85.23116703145206
+      ],
+      "warm_median_ms": 86.48027101298794
+    },
+    {
+      "id": "S4",
+      "question": "What is the average customer rating for each product in our store?",
+      "expected": "sql",
+      "variant": "C",
+      "decision": "sql",
+      "correct": true,
+      "probabilities": {
+        "vectorstore": 0.213,
+        "sql": 0.55,
+        "web_search": 0.237
+      },
+      "decision_margin": 0.313,
+      "expected_source_margin": 0.313,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 241,
+      "warm_latency_ms": [
+        99.4117499794811,
+        90.3939160052687
+      ],
+      "warm_median_ms": 94.9028329923749
+    },
+    {
+      "id": "S5",
+      "question": "Show the review comments and ratings from customers in Spain for our store's products.",
+      "expected": "sql",
+      "variant": "A",
+      "decision": "web_search",
+      "correct": false,
+      "probabilities": {
+        "vectorstore": 0.0337,
+        "sql": 0.1668,
+        "web_search": 0.7995
+      },
+      "decision_margin": 0.6327,
+      "expected_source_margin": -0.6327,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 197,
+      "warm_latency_ms": [
+        87.37775002373382,
+        86.85795799829066
+      ],
+      "warm_median_ms": 87.11785401101224
+    },
+    {
+      "id": "S5",
+      "question": "Show the review comments and ratings from customers in Spain for our store's products.",
+      "expected": "sql",
+      "variant": "C",
+      "decision": "sql",
+      "correct": true,
+      "probabilities": {
+        "vectorstore": 0.1624,
+        "sql": 0.6675,
+        "web_search": 0.1701
+      },
+      "decision_margin": 0.4974,
+      "expected_source_margin": 0.4974,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 244,
+      "warm_latency_ms": [
+        92.75579202221707,
+        96.77875001216307
+      ],
+      "warm_median_ms": 94.76727101719007
+    },
+    {
+      "id": "W1",
+      "question": "What is the latest EUR to USD exchange rate?",
+      "expected": "web_search",
+      "variant": "A",
+      "decision": "web_search",
+      "correct": true,
+      "probabilities": {
+        "vectorstore": 0.0363,
+        "sql": 0.0683,
+        "web_search": 0.8954
+      },
+      "decision_margin": 0.8271,
+      "expected_source_margin": 0.8271,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 191,
+      "warm_latency_ms": [
+        74.7292079613544,
+        69.05983295291662
+      ],
+      "warm_median_ms": 71.89452045713551
+    },
+    {
+      "id": "W1",
+      "question": "What is the latest EUR to USD exchange rate?",
+      "expected": "web_search",
+      "variant": "C",
+      "decision": "sql",
+      "correct": false,
+      "probabilities": {
+        "vectorstore": 0.1954,
+        "sql": 0.4301,
+        "web_search": 0.3745
+      },
+      "decision_margin": 0.0556,
+      "expected_source_margin": -0.0556,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 238,
+      "warm_latency_ms": [
+        96.39199997764081,
+        92.97295799478889
+      ],
+      "warm_median_ms": 94.68247898621485
+    },
+    {
+      "id": "W2",
+      "question": "Who is the current prime minister of Canada?",
+      "expected": "web_search",
+      "variant": "A",
+      "decision": "web_search",
+      "correct": true,
+      "probabilities": {
+        "vectorstore": 0.0495,
+        "sql": 0.0663,
+        "web_search": 0.8842
+      },
+      "decision_margin": 0.8179,
+      "expected_source_margin": 0.8179,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 190,
+      "warm_latency_ms": [
+        70.9220829885453,
+        74.17733297916129
+      ],
+      "warm_median_ms": 72.5497079838533
+    },
+    {
+      "id": "W2",
+      "question": "Who is the current prime minister of Canada?",
+      "expected": "web_search",
+      "variant": "C",
+      "decision": "sql",
+      "correct": false,
+      "probabilities": {
+        "vectorstore": 0.2071,
+        "sql": 0.4803,
+        "web_search": 0.3126
+      },
+      "decision_margin": 0.1677,
+      "expected_source_margin": -0.1677,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 237,
+      "warm_latency_ms": [
+        87.07337500527501,
+        93.81183300865814
+      ],
+      "warm_median_ms": 90.44260400696658
+    },
+    {
+      "id": "W3",
+      "question": "What are the latest earthquake reports from Japan?",
+      "expected": "web_search",
+      "variant": "A",
+      "decision": "web_search",
+      "correct": true,
+      "probabilities": {
+        "vectorstore": 0.0514,
+        "sql": 0.085,
+        "web_search": 0.8636
+      },
+      "decision_margin": 0.7786,
+      "expected_source_margin": 0.7786,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 190,
+      "warm_latency_ms": [
+        70.82124997396022,
+        74.32429102482274
+      ],
+      "warm_median_ms": 72.57277049939148
+    },
+    {
+      "id": "W3",
+      "question": "What are the latest earthquake reports from Japan?",
+      "expected": "web_search",
+      "variant": "C",
+      "decision": "sql",
+      "correct": false,
+      "probabilities": {
+        "vectorstore": 0.184,
+        "sql": 0.4314,
+        "web_search": 0.3845
+      },
+      "decision_margin": 0.0469,
+      "expected_source_margin": -0.0469,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 237,
+      "warm_latency_ms": [
+        95.62541695777327,
+        97.32287499355152
+      ],
+      "warm_median_ms": 96.4741459756624
+    },
+    {
+      "id": "W4",
+      "question": "When is the next NASA Artemis mission scheduled to launch?",
+      "expected": "web_search",
+      "variant": "A",
+      "decision": "web_search",
+      "correct": true,
+      "probabilities": {
+        "vectorstore": 0.0659,
+        "sql": 0.0775,
+        "web_search": 0.8566
+      },
+      "decision_margin": 0.7791,
+      "expected_source_margin": 0.7791,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 193,
+      "warm_latency_ms": [
+        88.09591695899144,
+        85.73941700160503
+      ],
+      "warm_median_ms": 86.91766698029824
+    },
+    {
+      "id": "W4",
+      "question": "When is the next NASA Artemis mission scheduled to launch?",
+      "expected": "web_search",
+      "variant": "C",
+      "decision": "sql",
+      "correct": false,
+      "probabilities": {
+        "vectorstore": 0.1665,
+        "sql": 0.7269,
+        "web_search": 0.1066
+      },
+      "decision_margin": 0.5604,
+      "expected_source_margin": -0.6203,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 240,
+      "warm_latency_ms": [
+        97.33249997952953,
+        89.24120798474178
+      ],
+      "warm_median_ms": 93.28685398213565
+    },
+    {
+      "id": "W5",
+      "question": "Who won the most recently completed men's Wimbledon singles final?",
+      "expected": "web_search",
+      "variant": "A",
+      "decision": "web_search",
+      "correct": true,
+      "probabilities": {
+        "vectorstore": 0.0808,
+        "sql": 0.138,
+        "web_search": 0.7813
+      },
+      "decision_margin": 0.6433,
+      "expected_source_margin": 0.6433,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 196,
+      "warm_latency_ms": [
+        83.20908399764448,
+        90.90087498771027
+      ],
+      "warm_median_ms": 87.05497949267738
+    },
+    {
+      "id": "W5",
+      "question": "Who won the most recently completed men's Wimbledon singles final?",
+      "expected": "web_search",
+      "variant": "C",
+      "decision": "sql",
+      "correct": false,
+      "probabilities": {
+        "vectorstore": 0.2301,
+        "sql": 0.4949,
+        "web_search": 0.275
+      },
+      "decision_margin": 0.2199,
+      "expected_source_margin": -0.2199,
+      "stable_at_returned_precision": true,
+      "encoded_tokens": 243,
+      "warm_latency_ms": [
+        94.83462502248585,
+        89.59387498907745
+      ],
+      "warm_median_ms": 92.21425000578165
+    }
+  ],
+  "guard_pass_all_inputs": true,
+  "actual_tokens_verified_all_forwards": true,
+  "probabilities_stable_at_4_decimals": true,
+  "frozen_plan_sha256": "298d1043d168668c1444b666f383f610515f7eacb0a1fc0277351e2eee888920",
+  "limitations": [
+    "Only 15 clear English single-source questions, five per datasource; no broad accuracy or statistical superiority claim.",
+    "Labels were frozen before predictions, independently of A/C outputs, using actual project sources. One analyst; no independent second human annotation.",
+    "Previous two-question results were known; this is a bounded diagnostic, not a pristine held-out benchmark.",
+    "SQL DB and Chroma index are absent; downstream availability and answers were not evaluated or initialized.",
+    "Native chains module import lacks langchain_ollama; exact source-loaded loader, schema and validator were reused with actual SDK inference; no provider mocks or graph run.",
+    "Returned raw SDK probabilities have four decimal places and are not validated for calibration; margins are top-1 minus runner-up, not the SDK entropy confidence.",
+    "Model load emitted unchanged clamp warning for unused choice:11+ temperature bucket; effective Choice3-5 temperature remained 1.7601518630981445.",
+    "Preflight first attempt passed encoding then failed in diagnostic console formatting (flush argument), before any inference. Only that harness logging error was corrected; failed validation artifacts are preserved. Criteria, labels and model parameters were not changed."
+  ],
+  "source_descriptions": {
+    "vectorstore": "Documentation about Retrieval-Augmented Generation (RAG), agentic RAG patterns with LangGraph, and LLM evaluation with RAGAS.",
+    "sql": "A SQLite database of a fictional online store with three tables: products (name, category, price), sales (product, quantity, date, country) and product_reviews (product, rating, country, review_date, comment).",
+    "web_search": "current events, recent facts, or anything not covered by the other two sources."
+  },
+  "variants": {
+    "A": {
+      "datasource": {
+        "type": "choice",
+        "instructions": "Pick the single best datasource for question using the descriptions in sources.",
+        "criteria": {
+          "vectorstore": "The source described in sources.vectorstore.",
+          "sql": "The source described in sources.sql.",
+          "web_search": "The source described in sources.web_search."
+        }
+      }
+    },
+    "C": {
+      "datasource": {
+        "type": "choice",
+        "instructions": "Pick the single best datasource for question using the descriptions in sources.",
+        "criteria": {
+          "vectorstore": "Documentation on Retrieval-Augmented Generation (RAG), agentic RAG patterns with LangGraph, and RAGAS evaluation.",
+          "sql": "SQLite online store: product names, categories and prices; sales quantities, dates and countries; product reviews, ratings, review dates and comments.",
+          "web_search": "current events, recent facts, or anything not covered by the other two sources."
+        }
+      }
+    }
+  },
+  "measured_call_count": 60,
+  "runtime_parameters": {
+    "dtype": "torch.float16",
+    "amp_enabled": true,
+    "mps_amp_min_rows": 5,
+    "temperature": [
+      1.6369030475616455,
+      1.2514300346374512,
+      1.983399510383606
+    ],
+    "temperature_by_options": {
+      "choice:3-5": 1.7601518630981445,
+      "choice:6-10": 1.0000158548355103,
+      "score:3-5": 1.2514300346374512,
+      "noul:2": 1.983399510383606,
+      "choice:11+": 0.5,
+      "choice:2": 1.9063563346862793
+    },
+    "training": false
+  },
+  "model_cfg": {
+    "encoder": "answerdotai/ModernBERT-large",
+    "head_layers": 2,
+    "max_len": 512,
+    "head_max_len": 192,
+    "max_prefixes": 6,
+    "act_costs": {
+      "escalate": 0.5
+    },
+    "cost_wrong_act": 3.0,
+    "amp_dtype": "bf16",
+    "model_name": "rl-agent",
+    "temperature": [
+      1.6369030475616455,
+      1.2514300346374512,
+      1.983399510383606
+    ],
+    "temperature_by_options": {
+      "choice:3-5": 1.7601518630981445,
+      "choice:6-10": 1.0000158548355103,
+      "score:3-5": 1.2514300346374512,
+      "noul:2": 1.983399510383606,
+      "choice:11+": 0.10058280825614929,
+      "choice:2": 1.9063563346862793
+    },
+    "training": {
+      "updates": 7313,
+      "epochs_completed": 1,
+      "hours": 1.96,
+      "world_size": 1,
+      "fine_tuned_from_checkpoint": true
+    }
+  },
+  "scope": "Real MPS SDK/source-extracted production adapters, not native graph and not an LLM-router comparison."
+}

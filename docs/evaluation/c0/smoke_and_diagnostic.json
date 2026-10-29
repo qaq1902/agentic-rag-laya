@@ -1,0 +1,280 @@
+{
+  "mps_runtime_pass": true,
+  "full_native_module_import": "BLOCKED: missing langchain_ollama; source AST loaded exact production Laya functions, with real weights and no provider/prediction stubs",
+  "actual_forward_count": 8,
+  "cold_definition": "Each component uses a fresh Python process; cold-load + first adapter call excludes interpreter startup; OS disk cache/GPU driver may already be warm.",
+  "warnings": [
+    "Checkpoint choice:11+ temperature 0.10058 was clamped to 0.5 by Laya; the probe uses choice:3-5 and noul:2, not the affected bucket."
+  ],
+  "components": {
+    "router": {
+      "status": "FAIL",
+      "runtime_pass": true,
+      "cold_model_load_ms": 3445.8420829614624,
+      "cold_first_adapter_ms": 749.2136670043692,
+      "cold_load_plus_first_adapter_ms": 4195.055749965832,
+      "warm_repeat_ms": [
+        83.96383299259469,
+        79.62783396942541
+      ],
+      "cases": [
+        {
+          "id": "R1",
+          "payload": {
+            "question": "What is retrieval grading in agentic RAG and why is it useful?"
+          },
+          "expected": "vectorstore",
+          "decision": "web_search",
+          "raw_outputs": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "datasource": {
+                  "type": "choice",
+                  "choice": "web_search",
+                  "probabilities": {
+                    "vectorstore": 0.3514,
+                    "sql": 0.2903,
+                    "web_search": 0.3584
+                  },
+                  "confidence": 0.0039,
+                  "answer_confidence": 0.3584,
+                  "action": {
+                    "act_probability": 1.0
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 196,
+                "output_tokens": 0
+              }
+            }
+          ]
+        },
+        {
+          "id": "R2",
+          "payload": {
+            "question": "In our store database, which product sold the most units in Spain?"
+          },
+          "expected": "sql",
+          "decision": "web_search",
+          "raw_outputs": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "datasource": {
+                  "type": "choice",
+                  "choice": "web_search",
+                  "probabilities": {
+                    "vectorstore": 0.1707,
+                    "sql": 0.1856,
+                    "web_search": 0.6437
+                  },
+                  "confidence": 0.1827,
+                  "answer_confidence": 0.6437,
+                  "action": {
+                    "act_probability": 1.0
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 195,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "grader": {
+      "status": "PASS",
+      "runtime_pass": true,
+      "cold_model_load_ms": 2108.580540982075,
+      "cold_first_adapter_ms": 272.63341698562726,
+      "cold_load_plus_first_adapter_ms": 2381.2139579677023,
+      "warm_repeat_ms": [
+        50.330291967839,
+        50.87816598825157
+      ],
+      "cases": [
+        {
+          "id": "G1",
+          "payload": {
+            "question": "What is retrieval-augmented generation (RAG)?",
+            "document": "Retrieval-Augmented Generation (RAG) retrieves documents from a knowledge base and uses them as evidence when generating an answer."
+          },
+          "expected": "yes",
+          "decision": "yes",
+          "raw_outputs": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "relevant": {
+                  "type": "noul",
+                  "noul": 0.7263,
+                  "confidence": 0.7263,
+                  "answer_confidence": 0.7263,
+                  "action": {
+                    "act_probability": 1.0
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 126,
+                "output_tokens": 0
+              }
+            }
+          ]
+        },
+        {
+          "id": "G2",
+          "payload": {
+            "question": "What is retrieval-augmented generation (RAG)?",
+            "document": "A sourdough starter is fed with flour and water. Let bread dough rise before baking."
+          },
+          "expected": "no",
+          "decision": "no",
+          "raw_outputs": [
+            {
+              "model": "laya-rl-agent",
+              "answers": {
+                "relevant": {
+                  "type": "noul",
+                  "noul": 0.0286,
+                  "confidence": 0.9714,
+                  "answer_confidence": 0.9714,
+                  "action": {
+                    "act_probability": 1.0
+                  }
+                }
+              },
+              "usage": {
+                "input_tokens": 117,
+                "output_tokens": 0
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "criteria_ab_diagnostic": {
+    "real_mps_inference": true,
+    "serial": true,
+    "warmups": 4,
+    "measured_calls": 12,
+    "independent_questions": 2,
+    "repetitions_per_variant_question": 3,
+    "only_changed_factor": "Only Choice criteria values; same state, instructions, labels/order, model/config/device.",
+    "cases": [
+      {
+        "id": "R1",
+        "question": "What is retrieval grading in agentic RAG and why is it useful?",
+        "expected": "vectorstore",
+        "variants": {
+          "A": {
+            "decision": "web_search",
+            "probabilities": {
+              "vectorstore": 0.3514,
+              "sql": 0.2903,
+              "web_search": 0.3584
+            },
+            "matches_expected": false,
+            "encoded_tokens": 196,
+            "warm_latencies_ms": [
+              76.54700003331527,
+              76.79174997610971,
+              77.5797920068726
+            ],
+            "warm_median_ms": 76.79174997610971,
+            "stable_across_3_repeats": true,
+            "production_guard": {
+              "status": "PASS"
+            }
+          },
+          "B": {
+            "decision": "web_search",
+            "probabilities": {
+              "vectorstore": 0.3509,
+              "sql": 0.2374,
+              "web_search": 0.4118
+            },
+            "matches_expected": false,
+            "encoded_tokens": 263,
+            "warm_latencies_ms": [
+              94.72612501122057,
+              94.12466600770131,
+              94.14620802272111
+            ],
+            "warm_median_ms": 94.14620802272111,
+            "stable_across_3_repeats": true,
+            "production_guard": {
+              "status": "REJECTED",
+              "error": "Laya input would truncate document-grader instructions, choices, question or document text (state_tokens=136, max_len=512)"
+            }
+          }
+        }
+      },
+      {
+        "id": "R2",
+        "question": "In our store database, which product sold the most units in Spain?",
+        "expected": "sql",
+        "variants": {
+          "A": {
+            "decision": "web_search",
+            "probabilities": {
+              "vectorstore": 0.1707,
+              "sql": 0.1856,
+              "web_search": 0.6437
+            },
+            "matches_expected": false,
+            "encoded_tokens": 195,
+            "warm_latencies_ms": [
+              76.65870897471905,
+              78.01870896946639,
+              76.48800004972145
+            ],
+            "warm_median_ms": 76.65870897471905,
+            "stable_across_3_repeats": true,
+            "production_guard": {
+              "status": "PASS"
+            }
+          },
+          "B": {
+            "decision": "sql",
+            "probabilities": {
+              "vectorstore": 0.3233,
+              "sql": 0.3417,
+              "web_search": 0.335
+            },
+            "matches_expected": true,
+            "encoded_tokens": 262,
+            "warm_latencies_ms": [
+              96.1133330129087,
+              94.84295797301456,
+              95.37641698261723
+            ],
+            "warm_median_ms": 95.37641698261723,
+            "stable_across_3_repeats": true,
+            "production_guard": {
+              "status": "REJECTED",
+              "error": "Laya input would truncate document-grader instructions, choices, question or document text (state_tokens=135, max_len=512)"
+            }
+          }
+        }
+      }
+    ],
+    "source_descriptions": {
+      "vectorstore": "Documentation about Retrieval-Augmented Generation (RAG), agentic RAG patterns with LangGraph, and LLM evaluation with RAGAS.",
+      "sql": "A SQLite database of a fictional online store with three tables: products (name, category, price), sales (product, quantity, date, country) and product_reviews (product, rating, country, review_date, comment).",
+      "web_search": "current events, recent facts, or anything not covered by the other two sources."
+    },
+    "state_and_instructions_complete_all_variants": true,
+    "truncation": "A has no truncation. B SQL option is truncated 51->48 tokens, dropping , comment). Full datasource descriptions remain intact in the unchanged state. Production integrity guard rejects B.",
+    "timing_scope": "warm SDK predict plus MPS synchronize; encoding audit/normalization/artifact I/O excluded",
+    "correct_unique_questions": {
+      "A": 0,
+      "B": 1
+    }
+  }
+}

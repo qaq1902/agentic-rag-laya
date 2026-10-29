@@ -1,0 +1,63 @@
+{
+  "code_commit": "826a3603acaf7d0a92f13bf9de42f6d6f634af6f",
+  "upstream_commit": "f248ce65d6bc11571c6ef45ffb70a86674ff5a05",
+  "dates_singapore": [
+    "2026-10-28",
+    "2026-10-29"
+  ],
+  "python": "3.11.15",
+  "os": "macOS 26.6.2",
+  "architecture": "arm64",
+  "laya_sdk": "0.3.13",
+  "laya_model": "convaiinnovations/laya",
+  "laya_revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+  "laya_device": "mps",
+  "laya_threshold": 0.5,
+  "laya_threshold_calibrated": false,
+  "laya_runtime": {
+    "temperature": [
+      1.6369030475616455,
+      1.2514300346374512,
+      1.983399510383606
+    ],
+    "temperature_by_options": {
+      "choice:3-5": 1.7601518630981445,
+      "choice:6-10": 1.0000158548355103,
+      "score:3-5": 1.2514300346374512,
+      "noul:2": 1.983399510383606,
+      "choice:11+": 0.5,
+      "choice:2": 1.9063563346862793
+    },
+    "dtype": "torch.float16",
+    "amp_enabled": true,
+    "mps_amp_min_rows": 5
+  },
+  "llm_model": "qwen2.5:3b",
+  "ollama_version": "0.40.8",
+  "ollama_gpu": "Metal",
+  "ollama_api_digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+  "qwen_weight_sha256": "5ee4f07cdb9beadbbb293e85803c569b01bd37ed059d2715faa7bb405f31caa6",
+  "temperature": 0,
+  "actual_llm_context": 4096,
+  "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "embedding_revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+  "chunk_size": 800,
+  "chunk_overlap": 120,
+  "retrieval_k": 4,
+  "max_retries": 2,
+  "execution": "serial, no concurrent model calls",
+  "c0_scope": "real SDK/source-extracted adapters, no full native import",
+  "c1_scope": "native document-grader chains, 1 excluded warmup + 30 measured per backend",
+  "c2_scope": "native graph, same indexes/questions, one run per backend/case; two live web fallback calls",
+  "c2_run_order": [
+    "S1_llm",
+    "S1_laya",
+    "S2_laya",
+    "S2_llm",
+    "S3_llm",
+    "S3_laya"
+  ],
+  "c2_backend_switch": "DOCUMENT_GRADER_BACKEND only; Router/Generator/Generation Grader remain original LLM",
+  "c2_timing": "graph.stream entry through terminal branch; initialization/indexing excluded; one empty-prompt Ollama preload outside graph counts",
+  "publication_transforms": "Numeric results preserved; model weights, local/proxy endpoints, absolute paths, logs, private environment and live-web text omitted. Frozen JSON copies are byte-identical."
+}

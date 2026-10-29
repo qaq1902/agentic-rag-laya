@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "purpose": "Public curated derivative, not a replacement for raw local evidence",
+  "original_artifacts_unchanged": true,
+  "source_paths_are_repository_relative": true,
+  "notes": [
+    "Hashes identify original artifacts; originals are not bundled and cannot be independently recovered from hashes.",
+    "Byte-identical frozen inputs and the observed environment are copied as-is. Other files explicitly select fields.",
+    "No web snippets or private tracebacks are published. This package supports offline metric verification, not a one-command replay of live inference."
+  ],
+  "files": [
+    {
+      "file": "c0/router_plan.json",
+      "operation": "byte-identical copy",
+      "source_artifacts": [
+        {
+          "path": "outputs/gate_c0_router_choice_final_20261028_mps/frozen_plan.json",
+          "sha256": "298d1043d168668c1444b666f383f610515f7eacb0a1fc0277351e2eee888920"
+        }
+      ]
+    },
+    {
+      "file": "c1/frozen_pairs.json",
+      "operation": "byte-identical copy",
+      "source_artifacts": [
+        {
+          "path": "outputs/gate_c1_document_grader_20261028_mps/frozen_pairs.json",
+          "sha256": "218733676aede169ff02f21ceb909922c3f7e2ff85d1dfb3b1104bc82df9fff6"
+        }
+      ]
+    },
+    {
+      "file": "c2/plan.json",
+      "operation": "byte-identical copy",
+      "source_artifacts": [
+        {
+          "path": "outputs/gate_c2_langgraph_20261029/frozen_plan.json",
+          "sha256": "cae6a788214d04e888b7e08318c0c46f5baa03e1474829c3c51df05ed68e31d9"
+        }
+      ]
+    },
+    {
+      "file": "environment.txt",
+      "operation": "byte-identical copy",
+      "source_artifacts": [
+        {
+          "path": "outputs/gate_c1_document_grader_20261028_mps/runtime/freeze.txt",
+          "sha256": "6b61605d525f2eba46984c71e0360d974c74a6740ae14004a2094583abbf6fd1"
+        }
+      ]
+    },
+    {
+      "file": "c0/router_results.json",
+      "operation": "selected-field projection; original numeric values preserved",
+      "source_artifacts": [
+        {
+          "path": "outputs/gate_c0_router_choice_final_20261028_mps/summary.json",
+          "sha256": "6916179529031a78b00e974a2f3269a0e259abe4611e49d1067516f9554f8027"
+        },
+        {
+          "path": "outputs/gate_c0_router_choice_final_20261028_mps/comparison.json",
+          "sha256": "c89299f71d4fab4a9980d6ddf1df5ad9b745ed383e055ef7ee09a3c66181dcc9"
+        }
+      ]
+    },
+    {
+      "file": "c0/smoke_and_diagnostic.json",
+      "operation": "selected-field projection; original numeric values preserved",
+      "source_artifacts": [
+        {
+          "path": "outputs/gate_c0_20261028_mps/summary.json",
+          "sha256": "dfd9c54632f1fa542d8d84801565bcc063105107fe24e7f1c8125e72217ee758"
+        },
+        {
+          "path": "outputs/gate_c0_router_choice_diag_20261028_mps/summary.json",
+          "sha256": "6d4fb7dca90a05e47fc0e12c065e414c415c2178a146c21a7c23ccc8ebb1969c"
+        }
+      ]
+    },
+    {
+      "file": "c1/metrics.json",
+      "operation": "selected-field projection; original numeric values preserved",
+      "source_artifacts": [
+        {
+          "path": "outputs/gate_c1_llm_completion_20261028/results/comparison.json",
+          "sha256": "09c2b5384514f22310a0caa12a1fd3b5178861c4487d8e6a69b06c3880237d2e"
+        }
+      ]
+    },
+    {
+      "file": "c1/predictions.json",
+      "operation": "selected-field projection; original numeric values preserved",
+      "source_artifacts": [
+        {
+          "path": "outputs/gate_c1_document_grader_20261028_mps/laya.json",
+          "sha256": "77ff91a7d09ccb4a02b1f6c542c08c1deb581ea82e73c9802d8632f32501f3c4"
+        },
+        {
+          "path": "outputs/gate_c1_llm_completion_20261028/llm.json",
+          "sha256": "fafb6945d589d9ffdf4eee99e2e8382c8214ec02b6da6bffcf31e61f74309fc8"
+        }
+      ]
+    },
+    {
+      "file": "c1/results.csv",
+      "operation": "joined measured decisions, probabilities and exact elapsed_ms; warmups excluded",
+      "source_artifacts": [
+        {
+          "path": "outputs/gate_c1_document_grader_20261028_mps/laya.json",
+          "sha256": "77ff91a7d09ccb4a02b1f6c542c08c1deb581ea82e73c9802d8632f32501f3c4"
+        },
+        {
+          "path": "outputs/gate_c1_llm_completion_20261028/llm.json",
+          "sha256": "fafb6945d589d9ffdf4eee99e2e8382c8214ec02b6da6bffcf31e61f74309fc8"
+        },
+        {
+          "path": "outputs/gate_c1_document_grader_20261028_mps/frozen_pairs.json",
+          "sha256": "218733676aede169ff02f21ceb909922c3f7e2ff85d1dfb3b1104bc82df9fff6"
+        }
+      ]
+    },
+    {
+      "file": "c2/runs.json",
+      "operation": "selected-field projection; original numeric values preserved",
+      "source_artifacts": [
+        {
+          "path": "outputs/gate_c2_langgraph_20261029/results/audit.json",
+          "sha256": "630b0c25b1df6df103f31a59e05434291a6eb76530c6e4cd4d3c6063011db61e"
+        },
+        {
+          "path": "outputs/gate_c2_langgraph_20261029/runs/S1_llm/result.json",
+          "sha256": "b59245a28e57d7e46c0ebff5ae734efb23edcd72ac63a102a6eb1f67a3dec2b7"
+        },
+        {
+          "path": "outputs/gate_c2_langgraph_20261029/runs/S1_laya/result.json",
+          "sha256": "8afd21ba2aed8393535fc8207f30b707f1a775fb91d578dae685945e6ef0aa1f"
+        },
+        {
+          "path": "outputs/gate_c2_langgraph_20261029/runs/S2_laya/result.json",
+          "sha256": "023d7367006ffa159a0222c3ec85d44aa9a3c1993d16ff4539f68d1dc483c545"
+        },
+        {
+          "path": "outputs/gate_c2_langgraph_20261029/runs/S2_llm/result.json",
+          "sha256": "fd8a697a37a7f0c9fb77a1f3aaf4a0d205ef380219a57883cc58233cacd86aec"
+        },
+        {
+          "path": "outputs/gate_c2_langgraph_20261029/runs/S3_llm/result.json",
+          "sha256": "3bdcb3514adbcf9dc5b0c09a24a5502d9204abca60a484676216384e8e34826f"
+        },
+        {
+          "path": "outputs/gate_c2_langgraph_20261029/runs/S3_laya/result.json",
+          "sha256": "c3c8d52ebb8efc6f777ebedff63dc0a65d96630eb63af94006e763e53c334888"
+        }
+      ]
+    },
+    {
+      "file": "c2/index_integrity.json",
+      "operation": "byte-identical copy",
+      "source_artifacts": [
+        {
+          "path": "outputs/gate_c2_langgraph_20261029/results/index_integrity.json",
+          "sha256": "8b5ae80beeb04836da27028c794f26c0b2d55ad18747da4950b8789fd2756b06"
+        }
+      ]
+    },
+    {
+      "file": "c2/summary.csv",
+      "operation": "selected audit fields; no answers or web text",
+      "source_artifacts": [
+        {
+          "path": "outputs/gate_c2_langgraph_20261029/results/audit.json",
+          "sha256": "630b0c25b1df6df103f31a59e05434291a6eb76530c6e4cd4d3c6063011db61e"
+        },
+        {
+          "path": "outputs/gate_c2_langgraph_20261029/runs/S1_llm/result.json",
+          "sha256": "b59245a28e57d7e46c0ebff5ae734efb23edcd72ac63a102a6eb1f67a3dec2b7"
+        },
+        {
+          "path": "outputs/gate_c2_langgraph_20261029/runs/S1_laya/result.json",
+          "sha256": "8afd21ba2aed8393535fc8207f30b707f1a775fb91d578dae685945e6ef0aa1f"
+        },
+        {
+          "path": "outputs/gate_c2_langgraph_20261029/runs/S2_laya/result.json",
+          "sha256": "023d7367006ffa159a0222c3ec85d44aa9a3c1993d16ff4539f68d1dc483c545"
+        },
+        {
+          "path": "outputs/gate_c2_langgraph_20261029/runs/S2_llm/result.json",
+          "sha256": "fd8a697a37a7f0c9fb77a1f3aaf4a0d205ef380219a57883cc58233cacd86aec"
+        },
+        {
+          "path": "outputs/gate_c2_langgraph_20261029/runs/S3_llm/result.json",
+          "sha256": "3bdcb3514adbcf9dc5b0c09a24a5502d9204abca60a484676216384e8e34826f"
+        },
+        {
+          "path": "outputs/gate_c2_langgraph_20261029/runs/S3_laya/result.json",
+          "sha256": "c3c8d52ebb8efc6f777ebedff63dc0a65d96630eb63af94006e763e53c334888"
+        }
+      ]
+    },
+    {
+      "file": "conditions.json",
+      "operation": "selected-field projection; original numeric values preserved",
+      "source_artifacts": [
+        {
+          "path": "outputs/gate_c1_llm_completion_20261028/results/comparison.json",
+          "sha256": "09c2b5384514f22310a0caa12a1fd3b5178861c4487d8e6a69b06c3880237d2e"
+        },
+        {
+          "path": "outputs/gate_c1_document_grader_20261028_mps/laya.json",
+          "sha256": "77ff91a7d09ccb4a02b1f6c542c08c1deb581ea82e73c9802d8632f32501f3c4"
+        },
+        {
+          "path": "outputs/gate_c2_langgraph_20261029/frozen_plan.json",
+          "sha256": "cae6a788214d04e888b7e08318c0c46f5baa03e1474829c3c51df05ed68e31d9"
+        }
+      ]
+    }
+  ]
+}

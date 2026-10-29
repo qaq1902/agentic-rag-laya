@@ -9,8 +9,34 @@ venv/
 
 # Environment
 .env
+.env.*
+!.env.example
+env/
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+service-account*.json
 
 # Generated artifacts
+/outputs/
+/models/
+/checkpoints/
+.cache/
+.hf_cache/
+uv_cache/
+*.safetensors
+*.gguf
+pytorch_model*.bin
+*.onnx
+*.pt
+*.pth
+*.ckpt
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
 .chroma/
 data/sample.db
 evaluation/results.csv

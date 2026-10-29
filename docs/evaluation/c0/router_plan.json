@@ -1,0 +1,159 @@
+{
+  "created_utc": "2026-10-28T09:20:47.127668+00:00",
+  "labeling_method": "Labels and rationales assigned from actual source coverage before any A/C predictions, independently of router outputs. One analyst; no second human annotator or inter-rater reliability claim.",
+  "ambiguity_definition": "Single best available source under the original router descriptions: covered domain documentation takes vectorstore precedence over possible generic web answers; private store records require SQL; recent or out-of-domain public information requires web_search.",
+  "prior_exposure": "Prior two-question A/B diagnostics were already known. These 15 exact questions are new; V2 overlaps the prior retrieval-grading topic. This is a bounded diagnostic, not a pristine unseen benchmark.",
+  "criteria_C": {
+    "vectorstore": "Documentation on Retrieval-Augmented Generation (RAG), agentic RAG patterns with LangGraph, and RAGAS evaluation.",
+    "sql": "SQLite online store: product names, categories and prices; sales quantities, dates and countries; product reviews, ratings, review dates and comments.",
+    "web_search": "current events, recent facts, or anything not covered by the other two sources."
+  },
+  "cases": [
+    {
+      "id": "V1",
+      "question": "How do chunk size and chunk overlap affect retrieval quality in a RAG pipeline?",
+      "expected": "vectorstore",
+      "rationale": "The local RAG fundamentals document directly explains chunk size, context loss and overlap.",
+      "evidence": "data/documents/rag_fundamentals.md:22-30",
+      "source_data_prerequisite": "The cited Markdown source exists; document ingestion/Chroma would be required for downstream answering. No ingestion is run in this routing-only diagnostic.",
+      "ambiguous": false
+    },
+    {
+      "id": "V2",
+      "question": "Why does retrieval grading discard irrelevant chunks before answer generation?",
+      "expected": "vectorstore",
+      "rationale": "The local agentic RAG document directly explains filtering, context dilution and hallucination reduction.",
+      "evidence": "data/documents/agentic_rag_patterns.md:18-24",
+      "source_data_prerequisite": "The cited Markdown source exists; document ingestion/Chroma would be required for downstream answering. No ingestion is run in this routing-only diagnostic.",
+      "ambiguous": false
+    },
+    {
+      "id": "V3",
+      "question": "What does query rewriting change when retrieval fails, and why should retries be bounded?",
+      "expected": "vectorstore",
+      "rationale": "The local agentic RAG document explains acronym expansion, synonyms and bounded retries.",
+      "evidence": "data/documents/agentic_rag_patterns.md:26-32",
+      "source_data_prerequisite": "The cited Markdown source exists; document ingestion/Chroma would be required for downstream answering. No ingestion is run in this routing-only diagnostic.",
+      "ambiguous": false
+    },
+    {
+      "id": "V4",
+      "question": "How does RAGAS faithfulness differ from answer relevancy?",
+      "expected": "vectorstore",
+      "rationale": "Both evaluation metrics are explicitly defined in the local RAGAS document.",
+      "evidence": "data/documents/evaluation_ragas.md:9-18",
+      "source_data_prerequisite": "The cited Markdown source exists; document ingestion/Chroma would be required for downstream answering. No ingestion is run in this routing-only diagnostic.",
+      "ambiguous": false
+    },
+    {
+      "id": "V5",
+      "question": "When would a RAG system be preferred over fine-tuning for changing knowledge?",
+      "expected": "vectorstore",
+      "rationale": "The local fundamentals document explicitly compares RAG and fine-tuning for changing knowledge.",
+      "evidence": "data/documents/rag_fundamentals.md:32-39",
+      "source_data_prerequisite": "The cited Markdown source exists; document ingestion/Chroma would be required for downstream answering. No ingestion is run in this routing-only diagnostic.",
+      "ambiguous": false
+    },
+    {
+      "id": "S1",
+      "question": "Which products in our store cost more than 50, and what are their categories and prices?",
+      "expected": "sql",
+      "rationale": "Only the private store products table provides the requested product-level category and price rows.",
+      "evidence": "scripts/create_sample_db.py:10-21;57-62",
+      "source_data_prerequisite": "The products/sales schema and seed records exist in scripts/create_sample_db.py; an initialized SQLite DB is required for downstream answering, but data/sample.db is absent and will not be created.",
+      "ambiguous": false
+    },
+    {
+      "id": "S2",
+      "question": "How many units did our store sell in each country?",
+      "expected": "sql",
+      "rationale": "This is a grouped sum of sales.quantity by sales.country, using actual seeded store data.",
+      "evidence": "scripts/create_sample_db.py:23-45;63-69",
+      "source_data_prerequisite": "The products/sales schema and seed records exist in scripts/create_sample_db.py; an initialized SQLite DB is required for downstream answering, but data/sample.db is absent and will not be created.",
+      "ambiguous": false
+    },
+    {
+      "id": "S3",
+      "question": "What was our store's total sales revenue for each product?",
+      "expected": "sql",
+      "rationale": "Revenue can be computed from existing sales quantities and products prices via sales.product_id=products.id.",
+      "evidence": "scripts/create_sample_db.py:10-45;57-69",
+      "source_data_prerequisite": "The products/sales schema and seed records exist in scripts/create_sample_db.py; an initialized SQLite DB is required for downstream answering, but data/sample.db is absent and will not be created.",
+      "ambiguous": false
+    },
+    {
+      "id": "S4",
+      "question": "What is the average customer rating for each product in our store?",
+      "expected": "sql",
+      "rationale": "Product ratings are real columns of the existing product_reviews CSV; SQL aggregation is the intended tabular source.",
+      "evidence": "data/tables/product_reviews.csv:1-23; src/agentic_rag/tabular.py:37-63",
+      "source_data_prerequisite": "The product_reviews CSV exists; it would need tabular ingestion into SQLite for downstream answering. No database or ingestion is invoked.",
+      "ambiguous": false
+    },
+    {
+      "id": "S5",
+      "question": "Show the review comments and ratings from customers in Spain for our store's products.",
+      "expected": "sql",
+      "rationale": "The CSV has country=Spain rows with both rating and comment; selecting these private records belongs to SQL.",
+      "evidence": "data/tables/product_reviews.csv:1-23; src/agentic_rag/tabular.py:37-63",
+      "source_data_prerequisite": "The product_reviews CSV exists; it would need tabular ingestion into SQLite for downstream answering. No database or ingestion is invoked.",
+      "ambiguous": false
+    },
+    {
+      "id": "W1",
+      "question": "What is the latest EUR to USD exchange rate?",
+      "expected": "web_search",
+      "rationale": "A current external exchange rate is absent from RAG documentation and private store tables.",
+      "evidence": "src/agentic_rag/graph/chains.py:57-59; src/agentic_rag/tools/web_search.py:1-37",
+      "source_data_prerequisite": "Live web search/network access and a working DDGS provider would be required for downstream answering. Only source selection is evaluated; no external search or answer lookup is run.",
+      "ambiguous": false
+    },
+    {
+      "id": "W2",
+      "question": "Who is the current prime minister of Canada?",
+      "expected": "web_search",
+      "rationale": "A current external officeholder is outside both the local RAG knowledge base and store records.",
+      "evidence": "src/agentic_rag/graph/chains.py:57-59; src/agentic_rag/tools/web_search.py:1-37",
+      "source_data_prerequisite": "Live web search/network access and a working DDGS provider would be required for downstream answering. Only source selection is evaluated; no external search or answer lookup is run.",
+      "ambiguous": false
+    },
+    {
+      "id": "W3",
+      "question": "What are the latest earthquake reports from Japan?",
+      "expected": "web_search",
+      "rationale": "Recent external event reports require web information and have no local source coverage.",
+      "evidence": "src/agentic_rag/graph/chains.py:57-59; src/agentic_rag/tools/web_search.py:1-37",
+      "source_data_prerequisite": "Live web search/network access and a working DDGS provider would be required for downstream answering. Only source selection is evaluated; no external search or answer lookup is run.",
+      "ambiguous": false
+    },
+    {
+      "id": "W4",
+      "question": "When is the next NASA Artemis mission scheduled to launch?",
+      "expected": "web_search",
+      "rationale": "A current external launch schedule is outside local RAG documentation and store schemas.",
+      "evidence": "src/agentic_rag/graph/chains.py:57-59; src/agentic_rag/tools/web_search.py:1-37",
+      "source_data_prerequisite": "Live web search/network access and a working DDGS provider would be required for downstream answering. Only source selection is evaluated; no external search or answer lookup is run.",
+      "ambiguous": false
+    },
+    {
+      "id": "W5",
+      "question": "Who won the most recently completed men's Wimbledon singles final?",
+      "expected": "web_search",
+      "rationale": "A recent external sports result is absent from both local source families.",
+      "evidence": "src/agentic_rag/graph/chains.py:57-59; src/agentic_rag/tools/web_search.py:1-37",
+      "source_data_prerequisite": "Live web search/network access and a working DDGS provider would be required for downstream answering. Only source selection is evaluated; no external search or answer lookup is run.",
+      "ambiguous": false
+    }
+  ],
+  "protocol": {
+    "changed_factor": "Only Choice criteria values. Keep full state descriptions, questions, instructions, labels/order, model/checkpoint, device and model parameters identical.",
+    "warmups_per_case_variant": 1,
+    "measured_repetitions_per_case_variant": 2,
+    "max_real_forward_calls": 90,
+    "execution_order": "Round 0 unscored warmups on all 15 inputs and both variants; rounds 1-2 measured, alternating A/C first by case and round. No batching/concurrent model calls.",
+    "latency_scope": "Real SDK.predict plus MPS synchronize. Validation audit, expected-label comparison, normalization, CPU token copying, logging and result writes excluded.",
+    "decision_margin": "Top-1 probability minus runner-up from returned 4-decimal probabilities; also record expected-source probability minus strongest other source.",
+    "stop_on": "Any guard/encoding mismatch, inference error, CPU fallback, source/baseline integrity failure or frozen-manifest modification. Never adapt criteria or labels after predictions.",
+    "interpretation": "Count 15 unique questions, not repeated calls, for accuracy. Systematic failure on clear single-source questions warrants keeping Choice experimental; this diagnostic cannot establish broad production accuracy."
+  }
+}

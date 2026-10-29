@@ -1,0 +1,136 @@
+{
+  "status": "COMPLETED_NATIVE_COMPONENT_AB",
+  "llm_metrics": {
+    "status": "COMPLETE",
+    "positive": "yes",
+    "valid_pairs": 30,
+    "confusion_matrix_order": "rows actual [no,yes], columns predicted [no,yes]",
+    "confusion_matrix": [
+      [
+        10,
+        0
+      ],
+      [
+        7,
+        13
+      ]
+    ],
+    "TN": 10,
+    "FP": 0,
+    "FN": 7,
+    "TP": 13,
+    "precision": 1.0,
+    "recall": 0.65,
+    "f1": 0.7878787878787878,
+    "accuracy": 0.7666666666666667,
+    "false_negatives": [
+      "R05",
+      "R06",
+      "B01",
+      "B03",
+      "B04",
+      "B05",
+      "B09"
+    ],
+    "false_positives": [],
+    "latency_ms": {
+      "median": 222.44631248759106,
+      "mean": 312.02661669813097,
+      "p95_nearest_rank": 663.3508749655448,
+      "min": 114.31124998489395,
+      "max": 725.5930840037763
+    },
+    "by_group": {
+      "clear_relevant": {
+        "total": 10,
+        "correct": 8
+      },
+      "clear_irrelevant": {
+        "total": 10,
+        "correct": 10
+      },
+      "borderline_related_insufficient": {
+        "total": 10,
+        "correct": 5
+      }
+    }
+  },
+  "laya_metrics": {
+    "status": "COMPLETE",
+    "positive": "yes",
+    "valid_pairs": 30,
+    "confusion_matrix_order": "rows actual [no,yes], columns predicted [no,yes]",
+    "confusion_matrix": [
+      [
+        10,
+        0
+      ],
+      [
+        5,
+        15
+      ]
+    ],
+    "TN": 10,
+    "FP": 0,
+    "FN": 5,
+    "TP": 15,
+    "precision": 1.0,
+    "recall": 0.75,
+    "f1": 0.8571428571428571,
+    "accuracy": 0.8333333333333334,
+    "false_negatives": [
+      "R02",
+      "B01",
+      "B02",
+      "B09",
+      "B10"
+    ],
+    "false_positives": [],
+    "latency_ms": {
+      "median": 82.96633348800242,
+      "mean": 81.86174456495792,
+      "p95_nearest_rank": 107.86587500479072,
+      "min": 63.73708299361169,
+      "max": 111.23704200144857
+    },
+    "by_group": {
+      "clear_relevant": {
+        "total": 10,
+        "correct": 9
+      },
+      "clear_irrelevant": {
+        "total": 10,
+        "correct": 10
+      },
+      "borderline_related_insufficient": {
+        "total": 10,
+        "correct": 6
+      }
+    }
+  },
+  "cold_latency": {
+    "llm": {
+      "model_load_ms_server": 1276.724375,
+      "cold_first_native_invoke_ms_including_load": 1904.3295829906128,
+      "cold_path_total_ms": 1904.3295829906128
+    },
+    "laya": {
+      "explicit_model_loader_ms": 70010.45325002633,
+      "first_native_invoke_ms_after_load": 351.555792032741,
+      "cold_path_total_ms": 70362.00904205907
+    },
+    "caveat": "Different load boundaries and different runs: Laya is the preserved prior C1 fresh-environment observation, not rerun. These one-off cold observations do not establish a general startup advantage."
+  },
+  "paired_outcomes": {
+    "both_correct": 20,
+    "llm_only_correct": 3,
+    "laya_only_correct": 5,
+    "both_wrong": 2
+  },
+  "threshold": 0.5,
+  "threshold_calibrated": false,
+  "llm_parse_fallback_count": 0,
+  "native_llm_model_calls": 31,
+  "existing_native_laya_calls": 31,
+  "frozen_pairs_sha256": "218733676aede169ff02f21ceb909922c3f7e2ff85d1dfb3b1104bc82df9fff6"
+}
