@@ -25,9 +25,11 @@ The Router also selects SQL or direct web search. Grounding is the upstream cond
 
 ## Setup and demo
 
-Use a checkout containing this extension; a portfolio GitHub URL has not yet been selected. Cloning upstream alone will not include it. Python **3.11** was evaluated (package minimum: 3.10). Install and start [Ollama](https://ollama.com/), then run from the repository root on macOS/Linux:
+Clone the published [qaq1902/TraceRAG](https://github.com/qaq1902/TraceRAG) repository to get this extension. Python **3.11** was evaluated (package minimum: 3.10). Install and start [Ollama](https://ollama.com/), then run on macOS/Linux:
 
 ```bash
+git clone https://github.com/qaq1902/TraceRAG.git
+cd TraceRAG
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -e '.[laya,dev]'

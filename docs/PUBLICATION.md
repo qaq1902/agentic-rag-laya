@@ -1,3 +1,23 @@
+# Portfolio publication record
+
+## Published release
+
+TraceRAG was successfully published to [qaq1902/TraceRAG](https://github.com/qaq1902/TraceRAG). The initial public `main` was verified to match commit [`3ecae0a`](https://github.com/qaq1902/TraceRAG/commit/3ecae0ac6a21126293a1e9b5b92bb9db5e7d63ec), `docs: prepare TraceRAG portfolio release`.
+
+- Local development branch: `exp/laya-router-ab`.
+- Publication remote: `portfolio`, pointing to `https://github.com/qaq1902/TraceRAG.git`; upstream `origin` remains `https://github.com/Slahnia/agentic-rag.git`.
+- Only the explicit `HEAD:refs/heads/main` refspec was pushed, with automatic tag pushing disabled. No other branch, tag or `refs/codex/*` reference was published; no force push or history rewrite was used.
+- The initial release contained the 21 reviewed publication files listed in the historical audit below, alongside the existing implementation history. Original outputs, weights, environments and caches remain excluded from the published branch.
+
+This follow-up updates only the README repository/setup entry point and this publication record. Experimental results, limitations, attribution, model-license boundaries and original evidence remain unchanged. The existing observability and reproducibility limitations still apply; successful publication does not imply production validation. See [evaluation](evaluation/README.md) and [attribution](ATTRIBUTION.md).
+
+## Historical pre-publication audit
+
+The following record is preserved verbatim from the initial release commit. Its statements about an unselected destination, an uncommitted draft and proposed next steps describe the pre-publication state; they are not the current publication status.
+
+<details>
+<summary>Pre-publication audit retained from commit 3ecae0a</summary>
+
 # Portfolio release preparation
 
 Status: documentation/evidence draft prepared; **not published or committed**. Runtime implementation remains at `826a360`, branch `exp/laya-router-ab`. Upstream master and the origin remote have not been changed. No experiments, application tests, model tuning, source-data edits or dependency installs were performed during preparation.
@@ -54,3 +74,5 @@ Keep `src/`, `tests/`, `data/`, original `evaluation/`, CLI/UI/scripts and packa
 `python3 docs/evaluation/verify.py` verifies the evidence offline. `git diff --check` checks whitespace. Mock tests remain separate from real C0–C2 inference evidence and were not rerun for this docs-only preparation. Never broadly stage ignored outputs or force-add model files. Before future publication, re-check that the staged names equal the allowlist above and inspect all staged content. No broad staging command is provided here.
 
 Gitignore handles generated/secret filenames; it cannot sanitize private values embedded in arbitrary text or erase prior Git history. The publication branch history was scanned for selected workstation-path, token and private-key patterns; internal snapshot blob contents were not fully scanned. This is not a complete secret audit. Repeat review if other changes are added before publication. Preserve original private evidence and the external durable evidence backup rather than replacing it with the public projections.
+
+</details>
