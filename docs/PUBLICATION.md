@@ -2,10 +2,10 @@
 
 ## Published release
 
-TraceRAG was successfully published to [qaq1902/TraceRAG](https://github.com/qaq1902/TraceRAG). The initial public `main` was verified to match commit [`3ecae0a`](https://github.com/qaq1902/TraceRAG/commit/3ecae0ac6a21126293a1e9b5b92bb9db5e7d63ec), `docs: prepare TraceRAG portfolio release`.
+TraceRAG was successfully published to [qaq1902/agentic-rag-laya](https://github.com/qaq1902/agentic-rag-laya). The initial public `main` was verified to match commit [`3ecae0a`](https://github.com/qaq1902/agentic-rag-laya/commit/3ecae0ac6a21126293a1e9b5b92bb9db5e7d63ec), `docs: prepare TraceRAG portfolio release`.
 
 - Local development branch: `exp/laya-router-ab`.
-- Publication remote: `portfolio`, pointing to `https://github.com/qaq1902/TraceRAG.git`; upstream `origin` remains `https://github.com/Slahnia/agentic-rag.git`.
+- Publication remote: `portfolio`, pointing to `https://github.com/qaq1902/agentic-rag-laya.git`; upstream `origin` remains `https://github.com/Slahnia/agentic-rag.git`.
 - Only the explicit `HEAD:refs/heads/main` refspec was pushed, with automatic tag pushing disabled. No other branch, tag or `refs/codex/*` reference was published; no force push or history rewrite was used.
 - The initial release contained the 21 reviewed publication files listed in the historical audit below, alongside the existing implementation history. Original outputs, weights, environments and caches remain excluded from the published branch.
 
