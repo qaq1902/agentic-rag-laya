@@ -1,4 +1,6 @@
-# TraceRAG: small decision models inside Agentic RAG
+# TraceRAG — Agentic RAG × Laya
+
+Exploring JEV-style lightweight decisions with Laya in Agentic RAG.
 
 A portfolio research extension of [Slahnia/agentic-rag](https://github.com/Slahnia/agentic-rag), based on [`f248ce6`](https://github.com/Slahnia/agentic-rag/tree/f248ce65d6bc11571c6ef45ffb70a86674ff5a05). The upstream project supplies the LangGraph workflow, retrieval, SQL, web search, generation, sample data and UI. This extension tests whether a small local decision model can replace selected LLM judgments while preserving that workflow.
 
