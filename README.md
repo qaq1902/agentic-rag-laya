@@ -8,7 +8,7 @@ Agentic RAG workflows often rely on Large Language Models (LLMs) not only for an
 
 Inspired by JEV-style decision models and discriminative classification, this project explores integrating **Laya**, a lightweight local decision model, into an existing LangGraph-based Agentic RAG system to reduce inference overhead.
 
-**Key result:** Laya Noul achieved an F1 score of **0.857 vs. 0.788** for the LLM baseline, with a warm median document-grading latency of **83 ms vs. 222 ms** (approximately **2.7× faster**) on the evaluated question-document pairs.
+**Key Result:** Laya Noul achieved 2.7–4.1× lower warm grading latency ratios compared with the LLM baseline across two evaluations, with a trade-off between speed and relevance recall.
 
 ## Architecture
 
@@ -30,6 +30,8 @@ The original web search, SQL, query rewriting, and recovery paths remain availab
 The experiments showed different outcomes across decision tasks.
 
 Laya Choice did not perform reliably enough for data source routing, while Noul demonstrated better relevance-grading performance and lower latency under the tested conditions.
+
+In the supplementary TREC evaluation, Laya Noul showed more conservative relevance filtering, favoring precision over recall while maintaining its latency advantage.
 
 The resulting hybrid architecture retains LLMs for routing, answer generation, and grounding verification, while delegating document relevance grading to Laya.
 
